@@ -1,1 +1,1 @@
-# FreedomCTF
+# Freedom CyberChase
