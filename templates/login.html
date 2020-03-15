@@ -1,46 +1,94 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
+    <link rel="stylesheet" href="cssbutbetter.css">
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Freedom CTF</title>
 </head>
-
 <body>
-    <nav>
-        <a href="#">Freedom Cyber Chase
-            <img src="../static/logo/FreedomHS-eaglehead177x160.png" alt=""></a>
-        <ul>
-            <a href="#">
-                <li>News</li>
+    <nav class="Menu ">
+        <a class="size" href="#">Freedom Cyber Chase</a>
+            <img class="weak"src="https://www.lcps.org/cms/lib/VA01000195/Centricity/Template/GlobalAssets/images///logos/FreedomHS-eaglehead177x160.png" alt="Freedom">
+        <i class="material-icons menu " id="nav_menu" style="font-size:36px;color: white;float: right;padding: 5px">menu</i>
+        <div id="overlay"></div>
+        <ul id="nav_ul">
+            <a href="index.html">
+                <li>Home</li>
             </a>
-            <a href="#">
+            <a href="Scoreboard.html">
                 <li>Scoreboard</li>
             </a>
             <a href="#">
                 <li>Challenges</li>
             </a>
-            <a href="#">
+            <a href="Register.html">
                 <li>Register</li>
             </a>
-            <a href="#">
+            <a href="login.html">
                 <li>Login</li>
             </a>
         </ul>
-    </nav>
-    <header><img src="../static/logo/freedomlogo.jpg" alt=""></header>
-    <main>
-        <img src="" alt="">
+
+    </nav>    
+    <div class="total">
+        <div class="login">
         <h1>Login</h1>
+        </div>
+        <div class="titlelogin">
         <form>
-            <lable> Username 
-            </lable>
-            <input type="text"><br>
-            <input type="text">
+            <label class="log" id="uname"> Team Name Or Email</label>
+            <input type="text" style="padding: 15px;" size="50" id="username" placeholder="Username"><br>
+            <label class="log" id="upassword"> Password</label>
+            <input type="password" style="padding: 15px;" size="50" id="password" placeholder="Password"> <br>
+            <div>
+            <input class="buttonlog" type="submit" Width="100px" value="Login">
+        <br>
+                <a href="#">Forgot?</a>
+                <p><a href="Register.html">Create an Account</a></p>
+            </div>
         </form>
-    </main>
+        </div>
+    </div>
+    <script>
+        
+        var nav_menu = document.getElementById('nav_menu');
+        var nav_ul = document.getElementById('nav_ul');
+        var overlay = document.getElementById('overlay');
+        
+        nav_menu.addEventListener('click',()=>{
+           if(overlay.className === 'overlay'){
+               overlay.classList.remove('overlay');
+               nav_ul.style.visibility='hidden';
+           } 
+            else{
+                overlay.classList.add('overlay');
+                nav_ul.style.visibility='visible';
+            }
+            
+        });
+        window.addEventListener('resize',()=>{
+        if (window.innerWidth > 800){
+            nav_ul.style.visibility='visible';
+        }   
+            else{
+                nav_ul.style.visibility='hidden';
+               overlay.classList.remove('overlay');
+
+            }
+        });
+        
+    </script>
+    
+
 </body>
 
+    
+    
+    
+    
+    
 </html>
