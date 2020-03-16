@@ -6,20 +6,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Freedom CTF</title>
 </head>
 <body>
-    <nav class="Menu">
+    <nav class="Menu ">
         <a class="size" href="#">Freedom Cyber Chase</a>
             <img class="weak"src="https://www.lcps.org/cms/lib/VA01000195/Centricity/Template/GlobalAssets/images///logos/FreedomHS-eaglehead177x160.png" alt="Freedom">
-        <ul>
+        <!--- ******* -->
+        <i class="material-icons menu " id="nav_menu" style="font-size:36px;color: white;float: right;padding: 5px">menu</i>
+        
+        <div id="overlay"></div>
+        <!--- ********* -->
+        <ul id="nav_ul">
             <a href="index.html">
                 <li>Home</li>
             </a>
             <a href="Scoreboard.html">
                 <li>Scoreboard</li>
             </a>
-            <a href="#">
+            <a href="Challange.html">
                 <li>Challenges</li>
             </a>
             <a href="Register.html">
@@ -29,6 +35,42 @@
                 <li>Login</li>
             </a>
         </ul>
-    </nav>    
+    </nav>
+    </body>
+
+<body>
+    
     </body>
 </html>
+<!--- 
+**************************************************************** -->
+ <script>
+        
+        var nav_menu = document.getElementById('nav_menu');
+        var nav_ul = document.getElementById('nav_ul');
+        var overlay = document.getElementById('overlay');
+        
+        nav_menu.addEventListener('click',()=>{
+           if(overlay.className === 'overlay'){
+               overlay.classList.remove('overlay');
+               nav_ul.style.visibility='hidden';
+           } 
+            else{
+                overlay.classList.add('overlay');
+                nav_ul.style.visibility='visible';
+            }
+            
+        });
+        window.addEventListener('resize',()=>{
+        if (window.innerWidth > 800){
+            nav_ul.style.visibility='visible';
+        }   
+            else{
+                nav_ul.style.visibility='hidden';
+               overlay.classList.remove('overlay');
+
+            }
+        });
+        
+    </script>
+    <!--- ************************************************************ -->

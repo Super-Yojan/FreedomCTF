@@ -20,7 +20,7 @@
             <a href="Scoreboard.html">
                 <li>Scoreboard</li>
             </a>
-            <a href="#">
+            <a href="Challange.html">
                 <li>Challenges</li>
             </a>
             <a href="Register.html">
@@ -37,28 +37,23 @@
 <form>
     <table class="reg">
     
-<td><label>Username*</label></td>
+<td><label>Username<a class="apple">*</a></label></td>
     <tr>
         <td><input type="text" style="padding: 8px;" size="40" id="username" placeholder="username"></td>
     </tr>
         
     <tr>
-        <td class="special">Warning: Your Username may be visible to other users. 
-            Do not include your real name or any other personal information.</td>
+        <td class="special">Warning: Your Username may be visible to other users. Do not include your real name or any other personal information. Also username is same as the team name.</td>
     </tr><br>
 
         
-<td><label>Password*</label></td>
+<td><label>Password<a class="apple">*</a></label></td>
     <tr>
         <td><input type="password" style="padding: 8px;" size="40" id="pwd" placeholder="password"></td>
     </tr>
 
-<td><label>Email*</label></td>    
     <tr>
-        <td><input type="Email" style="padding: 8px;" size="40" id="Email" placeholder="Student ID@lcps.org"> <br></td>
-    </tr>
-    <tr>
-        <td class="reglink">Go back to <a href="login.html">Login.</a></td>
+        <td class="reglink">Go back to <a href="logi n.html">Login.</a></td>
     </tr>
     
     <tr>
@@ -67,25 +62,47 @@
 
 <!-- this is where I stopped.heeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeereeeeeeeee-->
         
-<td><label>Team Name*</label></td><br>      
     <tr>
-        <td><input type="text" style="padding: 8px;" size="40" id="Team Name" placeholder="Team Name"></td>
-    </tr>
+        <td class="special">Note: Please type the lcps Email of the Team Member after typing the name of the member.</td>
+    </tr>  
         
-<td><label>Team Member 1*</label></td>
+<td><label>Team Member 1<a class="apple">*</a></label></td>
     <tr>
         <td><input type="text" style="padding: 8px;" size="40" id="Team Member 1" placeholder="Team Member"> <br></td>
-    </tr>
+   
+        </tr>
+    <tr>
+    <td><label class="email">Email<a class="apple">*</a></label></td>
+        <tr>
+            <td>
+            <input type="Email" style="padding: 8px;" size="40" id="Email" placeholder="Student ID@lcps.org"> <br></td>
+            </tr>
         
 <td><label>Team Member 2</label></td>
     <tr>
-        <td><input type="text" style="padding: 8px;" size="40" id="Team Member 2" placeholder="Team Member"> <br></td>
-    </tr>
+        <td>
+            <input type="text" style="padding: 8px;" size="40" id="Team Member 2" placeholder="Team Member"> <br></td>
+        
+        </tr>
+    <td><label class="email">Email:</label></td>
+        <tr>
+            <td>
+            <input type="Email" style="padding: 8px;" size="40" id="Email" placeholder="Student ID@lcps.org"> <br></td>
+        </tr>
+    
 
 <td><label>Team Member 3</label></td>
     <tr>
         <td><input type="text" style="padding: 8px;" size="40" id="Team Member 3" placeholder="Team Member"> <br></td>
+    
     </tr>
+        
+        <tr>
+    <td><label class="email">Email:</label></td>
+        <tr>
+            <td>
+            <input type="Email" style="padding: 8px;" size="40" id="Email" placeholder="Student ID@lcps.org"> <br></td>
+            </tr>
         
 <td><label>School Name:</label></td>
     <tr>
@@ -93,7 +110,7 @@
     </tr>
     <tr>
         <td class="special">Note: School name is opitional.</td>
-    </tr>        
+    </tr>  
     </table>
 </form>
     <div class="secondbutton">
@@ -130,5 +147,7 @@
 
             }
         });
+
+               
         
     </script>
