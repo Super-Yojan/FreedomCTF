@@ -10,6 +10,7 @@ div.total{
     transform: translate(-50%, -40%);
     
   }
+
 div.login {
   font-size:30;
   font-family: sans-serif;
@@ -28,7 +29,7 @@ label.log {
   font-size:14px;
   position: absolute;
   background: #ffff;
-  transform: translate(24px,7px);
+  transform: translate(24px,7px); /* 24 & 7 */
   padding-left:3px;
   padding-right:3px;
   font-family: roboto;
