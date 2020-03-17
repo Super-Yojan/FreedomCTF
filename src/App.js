@@ -4,6 +4,7 @@ import Map from './components/pages/Map';
 import Login from './components/pages/Login';
 import Home from './components/pages/Home';
 import NavMenu from './components/NavMenu';
+import Register from './components/pages/Register'
 
 //App.js does all the communication to back end and oversees all the pages. Everything else is handled by the pages
 
@@ -29,6 +30,11 @@ export default class App extends Component {
         <Route exact path ="/map" render={props =>(
           <React.Fragment>
             <Map/>
+          </React.Fragment>
+        )}/>
+         <Route exact path ="/register" render={props =>(
+          <React.Fragment>
+            <Register/>
           </React.Fragment>
         )}/>
       </Router>

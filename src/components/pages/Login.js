@@ -12,17 +12,17 @@ export default class Login extends Component {
                     </div>
                     <div className="titlelogin">
                     <form>
-                        <label className="log" id="uname"> Team Name Or Email</label>
+                        <label className = "log" id="uname"> Team Name Or Email</label> <br/>
                         <input type="text" style ={boxStyle} placeholder="Username"/>
-                        <br></br>
-                        <label className="log" id="upassword"> Password</label>
-                        <br></br>
+                        <br/>
+                        <label className = "log" id="upassword"> Password</label>
+                        <br/>
                         <input type="password" style={boxStyle} id="password" placeholder="Password"/>
                         <div>
-                        <input className ="buttonlog" type="submit" width="100px" value="Login"></input>
-                        <br></br>
+                        <input className ="buttonlog" type="submit" width="100px" value="Login"/>
+                        <br/>
                         <Link>Forgot?</Link>
-                        <br></br>
+                        <br/>
                         <Link>Create an Account</Link>
                         </div>
                     </form>
