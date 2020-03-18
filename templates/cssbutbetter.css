@@ -82,7 +82,13 @@ div.total{
     top: 30%;
     left: 32%;
     transform: translate(-50%, -40%);
-    
+    text-align: left;
+    border: 2px solid black;
+    padding: 15px 30px;
+    transform: translate(58%,100px);
+    border-radius: 25px;
+    padding-top: 40px;
+    font-family: sans-serif;
 }
 
 div.login {
@@ -94,10 +100,12 @@ div.login {
 
 
 .login h1{
-     background: rgb(204, 228, 240);
     width: 100%;
-
+    padding:2rem 1rem;
+    margin-bottom:2rem;
+    border-radius:.3rem
 }
+
 label.log {
     font-size:14px;
     position: absolute;
@@ -105,18 +113,9 @@ label.log {
     transform: translate(24px,7px);
     padding-left:3px;
     padding-right:3px;
-    font-family: roboto;
+    font-family: Montserrat;
 }
 
-div.titlelogin {
-    text-align: left;
-    border: 2px solid black;
-    padding: 15px 30px;
-    transform: translate(58%,100px);
-    border-radius: 25px;
-    padding-top: 40px;
-    font-family: sans-serif;
-}
 input.buttonlog {
     padding: 5px 70px;
     text-align: center;
@@ -128,6 +127,7 @@ input.buttonlog {
     font-family: sans-serif;
     font-size: 20;
 }
+
 
 /* Warning ------------------------------------>Login page ends*/
 
@@ -165,7 +165,6 @@ img.weak {
 nav.menu {
   font-weight: bold;
   font-size:20;
-  font-style: Comic;
 }
 nav{
   position: fixed;
