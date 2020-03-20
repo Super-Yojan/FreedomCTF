@@ -11,8 +11,9 @@ export default function NavMenu() {
                 {/* <div className = "overlay"></div> <-- dont know what to do with this */}
                 <ul>
                     <Link to = '/'> Home </Link> 
-                    <Link to = '/login'>Login</Link> 
+                    <Link to = '/login'>Login</Link>
                     <Link to = '/map'>Map</Link>
+                    <Link to = '/scoreboard'>Scoreboard</Link>
                     <Link to = '/register'>Register</Link>
                 </ul>
             </nav>

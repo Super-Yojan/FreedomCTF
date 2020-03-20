@@ -1,27 +1,29 @@
 from flask import Flask , jsonify, request,render_template
+from flask_cors import CORS,cross_origin
 import mysql.connector
 from datetime import datetime
 
 app = Flask ('__name__')
-
+#if you have any complain about password then we will change it later..
 cnx = mysql.connector.connect(host="localhost", user="root", password="cyber@2020", database="cyberchase")
 
 cursor = cnx.cursor()
 
 @app.route('/registerTeam', methods=['GET', 'POST'])
+@cross_origin()
 def register():
     if request.method == 'POST':
         names = [request.form['Name1']]
         studentId = [request.form['StudentID1']]
-        
+
         if request.form['Name2'] != "":
             names.append(request.form['Name2'])
-        
+
         if request.form['Name3'] != "":
             names.append(request.form['Name3'])
         if request.form['Name4'] != "":
             names.append(request.form['Name4'])
-        
+
         if request.form['StudentID2'] != "":
             studentId.append(request.form['StudentID2'])
 
@@ -34,9 +36,9 @@ def register():
 
 
         add_user(names,studentId,request.form['SchoolName'])
-        
-        
-        query = ("insert into Team (TeamName,TeamPassword,TeamStatus,CreationDate,CreatedBy)" 
+
+
+        query = ("insert into Team (TeamName,TeamPassword,TeamStatus,CreationDate,CreatedBy)"
         "values(%(TeamName)s,%(TeamPassword)s,%(TeamStatus)s,%(CreationDate)s,%(CreatedBy)s)")
         queryData = {'TeamName':request.form['TeamName'],
                     'TeamPassword':request.form['TeamPassword'],
@@ -46,7 +48,7 @@ def register():
         }
         cursor.execute(query,queryData)
         cnx.commit()
-        team_id= get_team_id(request.form['TeamName']) 
+        team_id= get_team_id(request.form['TeamName'])
         student_id = get_user_ids(studentId)
         add_members(team_id,student_id)
 
@@ -84,7 +86,7 @@ def get_team_name():
         return jsonify({'Result':'1','Message':'Team doesn\'t exist'})
 
 def add_user(names, studentId,schoolName):
-    query= ("insert into User (FirstName, LastName,StudentID,CreationDate,UserType,SchoolName,Status)" 
+    query= ("insert into User (FirstName, LastName,StudentID,CreationDate,UserType,SchoolName,Status)"
     "Values (%(FirstName)s,%(LastName)s,%(StudentID)s,%(CreationDate)s,%(UserType)s,%(SchoolName)s,%(Status)s)")
     for i in range(len(names)):
         data = {'FirstName':names[i].split()[0],
@@ -98,18 +100,18 @@ def add_user(names, studentId,schoolName):
         }
         cursor.execute(query,data)
         cnx.commit()
-    
+
 
 def add_members(team_id,user_id):
     query=("insert into Members(TeamID,UserID,AddedDate,MemberStatus)"
         "Values(%(TeamID)s,%(UserID)s,%(AddedDate)s,%(Status)s)")
-    
+
     for i in range(len(user_id)):
         data={'TeamID': str(team_id[0]),
             'UserID': str(user_id[i][0]),
             'AddedDate':datetime.now(),
             'Status': 'Active'
-    
+
         }
         cursor.execute(query,data)
         cnx.commit()
@@ -117,11 +119,16 @@ def add_members(team_id,user_id):
 
 
 
-@app.route('/login', methods=['GET','POST'])
+@app.route('/login', methods=['GET','POST','PUT'])
+@cross_origin()
 def login():
     query= "Select * from Team where TeamName=%s and TeamPassword=%s"
-    cursor.execute(query,(request.form['TeamName'],request.form['TeamPassword']))
-    print(cursor)        
+    req_data = request.get_json()
+    print(req_data)
+    data = req_data.get('data')
+    print(data['TeamName'])
+    cursor.execute(query,(data['TeamName'],data['TeamPassword']))
+    print(cursor)
     for TeamName in cursor:
         print(TeamName[0])
         return jsonify({'Result':'1','Message':'Logined as team {}'.format(TeamName[1]),'TeamID':TeamName[0]})

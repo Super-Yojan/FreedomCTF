@@ -1,0 +1,81 @@
+.first_team{
+  background-color: #D4AF37;
+  padding: 25%;
+  border-radius: 50%;
+  transform: translateY(-100%);
+  color:white;
+  font-weight: bold;
+}
+.second_team{
+  background-color: #D4AF37;
+  padding: 25%;
+  border-radius: 50%;
+  transform: translateY(-100%);
+  color:white;
+  font-weight: bold;
+
+}
+.third_team{
+  background-color: #D4AF37;
+  padding: 25%;
+  border-radius: 50%;
+  transform: translateY(-100%);
+  color:white;
+  font-weight: bold;
+
+}
+
+
+
+
+.top_three{
+  margin-top: 10%;
+  display: flex;
+  transform: translate(60%,10%);
+  margin-bottom: 5%;
+  width: 50%
+}
+.First{
+  margin-top: auto;
+  height: 200px;
+  width: 100px;
+  background: #D4AF37;
+  margin-right: 10%;
+}
+.Second{
+  margin-top: auto;
+  height: 150px;
+  width: 100px;
+  background:#aaa9ad;
+}
+.Third{
+  margin-top: auto;
+  height: 100px;
+  width: 100px;
+  background: #a97142;
+  margin-right: 10%;
+
+}
+
+
+
+.scoreboard_list{
+  margin-left: 10%;
+  width: 85%;
+  list-style-position: inside;
+  background-color: rgb(207, 212, 209);
+  overflow: hidden;
+}
+
+
+.scoreboard_list li{
+  width: 100%;
+  padding: 15px;
+  overflow-x: hidden;
+}
+
+.scoreboard_list li .Score{
+  float: right;
+  margin-right: 30px;
+  overflow-x: hidden;
+}
