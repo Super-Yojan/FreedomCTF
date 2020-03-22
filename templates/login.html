@@ -1,13 +1,18 @@
 <html lang="en">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <head>
     <link rel="stylesheet" href="cssbutbetter.css">
+    
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
     <title>Freedom CTF</title>
 </head>
 <body class="bodypage">
@@ -47,12 +52,22 @@
     </div>
 </div>
     
-<div class="total">
+<div class="total" style="max-width:500px;margin:auto">
         <form>
             <label class="log" id="uname"> Team Name Or Email</label>
-            <input type="text" style="padding: 15px;" size="50" id="username" placeholder="Username"><br>
+            
+    <div class="add-icon">
+        <i class="fa fa-user icon"></i>
+        <input type="text" id="username" placeholder="Username">
+    </div>            
             <label class="log" id="upassword"> Password</label>
-            <input type="password" style="padding: 15px;" size="50" id="password" placeholder="Password"> <br>
+            
+    <div class="add-icon">
+        <i class="fa fa-key icon"></i>
+        <input type="password" id="password" placeholder="Password">
+    </div>       
+
+                        
             <div>
             <input class="buttonlog" type="submit" Width="100px" value="Login">
         <br>
