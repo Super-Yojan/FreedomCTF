@@ -3,8 +3,6 @@ import '../../css/Login.css';
 import { Link } from 'react-router-dom';
 //these two are something i got online for this.props.history.pussh
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
-import { Redirect } from "react-router-dom";
 import axios from 'axios';
 
 export default class Login extends Component {
@@ -16,7 +14,7 @@ export default class Login extends Component {
       redirect:null,
   }
 //This handles change in input to get all the necessary information...
-  handelChange = (event) => {
+  handleChange = (event) => {
     let nam = event.target.name;
     let value = event.target.value;
     this.setState({
@@ -49,7 +47,8 @@ export default class Login extends Component {
     .then(res => {
       console.log(res.data);
       if (res.data.Result == 1){
-
+        this.route.push('/map')
+        
         //we need to redirect to '/map' but i don't know how to do it..
         //I serached a lot online but nothing really worked...
 
@@ -77,7 +76,7 @@ export default class Login extends Component {
                         <br/>
                         <Link>Forgot?</Link>
                         <br/>
-                        <Link>Create an Account</Link>
+                        <Link to ="/register">Create an Account</Link>
 
                     </form>
 
