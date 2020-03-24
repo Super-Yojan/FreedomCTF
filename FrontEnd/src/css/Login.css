@@ -8,7 +8,7 @@ div.total{
     top: 30%;
     left: 32%;
     transform: translate(-50%, -40%);
-    
+
   }
 
 div.login {
@@ -17,12 +17,12 @@ div.login {
   transform: translate(295%,-20%);
   position: absolute;
 }
-  
-  
+
+
 .login h1{
   background: rgb(204, 228, 240);
   width: 100%;
-  
+
 }
 
 label.log {
@@ -34,7 +34,7 @@ label.log {
   padding-right:3px;
   font-family: roboto;
 }
-  
+
 div.titlelogin {
   text-align: left;
   border: 2px solid black;
@@ -55,4 +55,4 @@ input.buttonlog {
   color:white;
   font-family: sans-serif;
   font-size: 20;
-}  
+}

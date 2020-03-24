@@ -1,74 +1,77 @@
-h1.register {
-    text-align: center;
-    font-size:70;
-    font-family: Helvetica, Arial, sans-serif;
-  }
-  table, th, td {
-  padding: 4px;
-  margin-left:6; 
-  margin-right:1;
-  font-weight: bold;
-  
-  }
-  
-  a.apple {
-    color: red;
-  }
-  label.email{
-    color: midnightblue;
-    font-weight: 900
-  }
-  div.regbody {
-    border: 2px solid gray;
-    position: relative;
-    transform: translate(10%, 5%);
-    margin: 12
-  }
-  
-  td.special {
-    background-color:cornsilk;
-    color:#8a6d3b;
-    border-radius: 10px;
-    padding-left: 7px;
-    border-color: #faebcc;
-    border: 1px solid;
-    font-weight: normal;
-    font-family: serif;
-  
-  }
-  
-  td.reglink {
-    font-weight: normal;
-    padding: 0.5px;
-    
-  }
-  
-  div.godown {
-  margin: 0;
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+body{
+  margin-top: 5em;
+}
+
+.active{
+  border-bottom: solid 4px red;
+}
+h1{
+  margin-bottom: 20px;
+  text-align: center;
+}
+hr{
+  margin-bottom: 20px;
+  border: none;
+  border-bottom: .5px solid;
+}
+form{
   position: absolute;
-  top:  60%;
   left: 50%;
-  transform: translate(-50%, -40%);
-  }
-  
-  input {
-    border: 1px solid black;
-    margin:1em;
-    font-size:15;
-        
-  }
-  
-  button.regbutton {
-    padding: 3px 16px;
-    background-color:goldenrod;
-    border: 2px solid black;
-    color: black;
-    font-size:20;
-    position:relative;
-    left:30%;
-    border-radius: 12px;
-    transform: translate(50%, -40%);
-    font-family: serif;
-    font-weight:900;
-  
-  }
+  transform: translate(-50%);
+  width: 600px;
+  border: 1px solid;
+  padding:40px;
+}
+form label{
+  position: absolute;
+  transform: translate(20px,-10px);
+  font-size: 13px;
+  background-color: white;
+  font-weight: bold;
+}
+form input{
+  display: block;
+  margin-bottom: 10px;
+  width: 95%;
+  padding: 10px;
+}
+
+form input[type='submit']{
+  padding: 5px 70px;
+  text-align: center;
+  border-radius: 12px;
+  font-weight: bold;
+  background-color: royalblue;
+  color:white;
+  font-family: sans-serif;
+  font-size: 20;
+}
+
+form button{
+  width: 50%;
+  display: inline;
+  margin: 0px;
+  padding: 5px;
+  border: none;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+i{
+  position: absolute;
+  background-color: #190452;
+  color: white;
+  font-size: 40px;
+  padding:10px;
+  width: 20px;
+  text-align: center;
+  transform: translate(-30px,0px);
+}
+
+#Solo, #Team{
+  display: none;
+}
