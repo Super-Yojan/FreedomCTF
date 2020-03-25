@@ -1,4 +1,4 @@
-<!-- Delete all the comments as it is written using html comment and import css file. Also you might have to add a tag for the whole thing-->
+<!-- Delete all the comments as it is written using html comment and also don't forget to import css file. Also you might have to add a tag for the whole thing-->
 
  <!-- important include this is render tag that is used for react-->
    
