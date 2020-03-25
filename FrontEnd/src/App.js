@@ -7,11 +7,12 @@ import NavMenu from './components/NavMenu';
 import Register from './components/pages/Register'
 import Scoreboard from './components/pages/Scoreboard'
 
-//App.js does all the communication to back end and oversees all the pages. Everything else is handled by the pages
+//App.js does all the overhead communication and oversees all the pages. Everything else is handled by the pages
 
 export default class App extends Component {
 
   state = {
+    isLoggedIn: false,
 
   }
 
@@ -34,7 +35,7 @@ export default class App extends Component {
             <Map/>
           </React.Fragment>
         )}/>
-        // added a reoute to scoreboard
+        {/*added a route to scoreboard*/}
            <Route exact path ="/scoreboard" render={props =>(
             <React.Fragment>
               <Scoreboard/>
