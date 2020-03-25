@@ -1,4 +1,4 @@
-show databases;
+create database cyberchase;
 
 use cyberchase;
 

@@ -6,7 +6,7 @@ from datetime import datetime
 
 app = Flask ('__name__')
 #if you have any complain about password then we will change it later..
-cnx = mysql.connector.connect(host="localhost", user="root", password="cyber@2020",database="cyberchase")
+cnx = mysql.connector.connect(host="cyberchase", user="root", password="cyber@2020",database="cyberchase")
 cursor = cnx.cursor()
 
 
@@ -24,3 +24,6 @@ def login():
         print(TeamName[0])
         return jsonify({'Result':'1','Message':'Logined as team {}'.format(TeamName[1]),'TeamID':TeamName[0]})
     return str(cursor)
+
+if __name__ =='__main__':
+    app.run(host="0.0.0.0")
