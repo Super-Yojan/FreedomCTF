@@ -1,22 +1,22 @@
-i {
-  display: flex;
-  width:100%;
-  margin-bottom: 20px;
-  margin-top: 10px
+.add-icon {
+    display: flex;
+    width:100%;
+    margin-bottom: 20px;
+    margin-top: 10px
 }
 
 .icon {
-  padding: 10px;
-  background-color:midnightblue;
-  color: aliceblue;
-  text-align: center;
-  max-height: 30px;
-  transform: translate(0%,12.5px);
-  max-width: 100px;
+    padding: 10px;
+    background-color:midnightblue;
+    color: aliceblue;
+    text-align: center;
+    max-height: 30px;
+    transform: translate(0%,12.5px);
+    max-width: 100px;
 }
 
 fa fa-key icon{
-  max-width: 10px;
+    max-width: 10px;
 }
 
 input[type=text], input[type=password] {
@@ -27,52 +27,53 @@ margin-top: 1em;
 }
 
 div.total{
-  text-align: left;
-  border: 2px solid black;
-  padding: 15px 34px;
-  border-radius: 25px;
-  padding-top: 40px;
-  font-family: sans-serif;
-  transform: translate(0%,60px);
-  max-width:500px;margin:auto
+    text-align: left;
+    border: 2px solid black;
+    padding: 15px 34px;
+    border-radius: 25px;
+    padding-top: 40px;
+    font-family: sans-serif;
+    transform: translate(0%,60px);
+    max-width:500px;margin:auto  
 }
 
-div.login88 {
-  font-size:30;
-  font-family: sans-serif;
-  position: relative;
-  top:30
+div.login {
+    font-size:30;
+    font-family: sans-serif;
+    position: relative;
+    top:30
 }
 
-div.something{
-  background-color: #124;
-  color: whitesmoke;
-  text-align: center;
-  padding:70px;
-  transform: translate(0%,45px);
-  padding-top:1%;
-  padding-bottom: 1px;
+.something{
+    background-color: #124;
+    color: whitesmoke;
+    text-align: center;
+    padding:70px;
+    transform: translate(0%,45px);
+    padding-top:1%;
+    padding-bottom: 1px;
 
 }
 
 label.log {
-  font-size:14px;
-  position: absolute;
-  background: #ffff;
-  transform: translate(70px,3px);
-  padding-left:3px;
-  padding-right:3px;
-  font-family: Montserrat;
+    font-size:14px;
+    position: absolute;
+    background: #ffff;
+    transform: translate(70px,3px);
+    padding-left:3px;
+    padding-right:3px;
+    font-family: Montserrat;
 }
 
 input.buttonlog {
-  padding: 5px 70px;
-  text-align: center;
-  transform: translate(110px,1px);
-  border-radius: 12px;
-  font-weight: bold;
-  background-color: royalblue;
-  color:white;
-  font-family: sans-serif;
-  font-size: 20;
+    padding: 5px 70px;
+    text-align: center;
+    transform: translate(140px,1px);
+    border-radius: 12px;
+    font-weight: bold;
+    background-color: royalblue;
+    color:white;
+    font-family: sans-serif;
+    font-size: 20;
+    position: absolute;
 }
