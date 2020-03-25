@@ -60,7 +60,7 @@ export default class Register extends Component {
     //may or may not work 
     checkPassword(){
       if(this.state.password === this.state.confirmPass){
-        this.setState({goodPass: true})
+        this.setState({goodPass: true});
         return this.state.goodPass;
       }
       else{
@@ -103,7 +103,7 @@ export default class Register extends Component {
             {var result = res.data;
             this.setState({result});
             if (result.Result === 1){
-              this.setState({redirect_url: '/login'})
+              this.setState({redirect_url: '/login'});
             }
             else{
               console.log('nothing');
@@ -111,7 +111,6 @@ export default class Register extends Component {
 
           })
         }
-    }
 
   render() {
     if(this.state.redirect_url){
@@ -211,4 +210,4 @@ export default class Register extends Component {
         )
       }
     }
-}
+  }
