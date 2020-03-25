@@ -1,10 +1,10 @@
 import mysql.connector
 from mysql.connector import errorcode
 
-cnx = mysql.connector.connect(host="cyerchase", user="root", password="cyber@2020",database="cyberchase")
+cnx = mysql.connector.connect(host="localhost", user="root", password="cyber@2020",database="cyberchase")
 cursor = cnx.cursor()
 
-TABLES = []
+TABLES = {}
 TABLES['Categories']=("create table Categories(CategoryID integer primary key auto_increment," 
 	"CategoryName varchar(50) , CategoryStatus varchar(50))")
 TABLES['Challenges']=("create table Challenges(ChallengeID integer primary key auto_increment, "
@@ -31,8 +31,8 @@ for tables_name in TABLES:
 	table_query= TABLES[tables_name]
 	try:
 		cursor.execute(table_query)
-	except mysql.connector.ERROR as err:
-		if err.errno == errorcode.ER_TABLES_EXISTS_ERROR:
+	except mysql.connector.Error as err:
+		if err.errno == errorcode.ER_TABLE_EXISTS_ERROR:
 			print("already exists")
 		else:
 			print(err.msg)

@@ -1,7 +1,9 @@
-version: '3'
+version: '3.3'
 services:
  cyberchase:
   image: mysql
+  command: --default-authentication-plugin=mysql_native_password
+  restart: always
   environment:
    MYSQL_DATABASE: "cyberchase"
    MYSQL_ROOT_PASSWORD: "cyber@2020"
