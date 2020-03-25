@@ -10,7 +10,7 @@ services:
   ports:
    - "3306:3306"
   expose: 
-   - "3306" 
+   - "3306"
  login:
     build: ./Login
     depends_on: 
@@ -19,3 +19,11 @@ services:
       - cyberchase
     ports:
       - "8000:8000"
+ register:
+    build: ./Register
+    depends_on: 
+      - cyberchase
+    links: 
+      - cyberchase
+    ports:
+      - "8002:8002"

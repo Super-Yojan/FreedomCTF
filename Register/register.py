@@ -6,7 +6,7 @@ from datetime import datetime
 
 app = Flask ('__name__')
 #if you have any complain about password then we will change it later..
-cnx = mysql.connector.connect(host="cyerchase", user="root", password="cyber@2020",database="cyberchase")
+cnx = mysql.connector.connect(host="cyberchase", user="root", password="cyber@2020",database="cyberchase")
 cursor = cnx.cursor()
 
 
@@ -122,3 +122,5 @@ def add_members(team_id,user_id):
         cnx.commit()
 
 
+if __name__ == '__main__':
+    app.run(host="0.0.0.0",port=8002)
