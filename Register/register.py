@@ -3,52 +3,57 @@ from flask_cors import CORS,cross_origin
 import mysql.connector
 from datetime import datetime
 
+
 app = Flask ('__name__')
 #if you have any complain about password then we will change it later..
-cnx = mysql.connector.connect(host="localhost", user="root", password="cyber@2020", database="cyberchase")
-
+cnx = mysql.connector.connect(host="cyerchase", user="root", password="cyber@2020",database="cyberchase")
 cursor = cnx.cursor()
+
+
+
 
 @app.route('/registerTeam', methods=['GET', 'POST'])
 @cross_origin()
 def register():
+    jsondata= request.get_json()
+    data=jsondata.get('data')
     if request.method == 'POST':
-        names = [request.form['Name1']]
-        studentId = [request.form['StudentID1']]
+        names = [data['Name1']]
+        studentId = [data['StudentID1']]
 
-        if request.form['Name2'] != "":
-            names.append(request.form['Name2'])
+        if data['Name2'] != "":
+            names.append(data['Name2'])
 
-        if request.form['Name3'] != "":
-            names.append(request.form['Name3'])
-        if request.form['Name4'] != "":
-            names.append(request.form['Name4'])
+        if data['Name3'] != "":
+            names.append(data['Name3'])
+        if data['Name4'] != "":
+            names.append(data['Name4'])
 
-        if request.form['StudentID2'] != "":
-            studentId.append(request.form['StudentID2'])
+        if data['StudentID2'] != "":
+            studentId.append(data['StudentID2'])
 
-        if request.form['StudentID3'] != "":
-            studentId.append(request.form['StudentID3'])
+        if data['StudentID3'] != "":
+            studentId.append(data['StudentID3'])
 
-        if request.form['StudentID4'] != "":
-            studentId.append(request.form['StudentID4'])
+        if data['StudentID4'] != "":
+            studentId.append(data['StudentID4'])
 
 
 
-        add_user(names,studentId,request.form['SchoolName'])
+        add_user(names,studentId,data['SchoolName'])
 
 
         query = ("insert into Team (TeamName,TeamPassword,TeamStatus,CreationDate,CreatedBy)"
         "values(%(TeamName)s,%(TeamPassword)s,%(TeamStatus)s,%(CreationDate)s,%(CreatedBy)s)")
-        queryData = {'TeamName':request.form['TeamName'],
-                    'TeamPassword':request.form['TeamPassword'],
+        queryData = {'TeamName':data['TeamName'],
+                    'TeamPassword':data['TeamPassword'],
                     'TeamStatus': 'Active',
                     'CreationDate': datetime.now(),
-                    'CreatedBy': request.form['CreatedBy']
+                    'CreatedBy': data['CreatedBy']
         }
         cursor.execute(query,queryData)
         cnx.commit()
-        team_id= get_team_id(request.form['TeamName'])
+        team_id= get_team_id(data['TeamName'])
         student_id = get_user_ids(studentId)
         add_members(team_id,student_id)
 
@@ -117,26 +122,3 @@ def add_members(team_id,user_id):
         cnx.commit()
 
 
-
-
-@app.route('/login', methods=['GET','POST','PUT'])
-@cross_origin()
-def login():
-    query= "Select * from Team where TeamName=%s and TeamPassword=%s"
-    req_data = request.get_json()
-    print(req_data)
-    data = req_data.get('data')
-    print(data['TeamName'])
-    cursor.execute(query,(data['TeamName'],data['TeamPassword']))
-    print(cursor)
-    for TeamName in cursor:
-        print(TeamName[0])
-        return jsonify({'Result':'1','Message':'Logined as team {}'.format(TeamName[1]),'TeamID':TeamName[0]})
-    return str(cursor)
-@app.route('/test')
-def test():
-    return render_template('index.html')
-
-if __name__ == '__main__':
-    app.debug = True
-    app.run(host='0.0.0.0')

@@ -1,0 +1,15 @@
+version: '3'
+services:
+ cyberchase:
+  image: mysql
+  environment:
+   MYSQL_DATABASE: "cyberchase"
+   MYSQL_ROOT_PASSWORD: "cyber@2020"
+  ports:
+   - "3306:3306"
+ table:
+    build: ./Database
+ login:
+    build: ./Login
+    ports:
+      - "8000:8000"
