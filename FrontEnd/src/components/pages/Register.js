@@ -23,12 +23,6 @@ export default class Register extends Component {
       password:'',
       confirmPass:'',
       goodPass: false,
-      solo:false,
-      team:false,
-      email1:'',
-      email2:'',
-      email3:'',
-      email4:'',
 
     }
     this.handleChange = this.handleChange.bind(this);
@@ -45,8 +39,6 @@ export default class Register extends Component {
       soloButton.classList.add('active');
       var teamButton = document.getElementById('teamButton');
       teamButton.classList.remove('active');
-      this.setState({solo:true});
-      this.setState({team: false})
     }
 
     team = () =>{
@@ -58,8 +50,6 @@ export default class Register extends Component {
       soloButton.classList.remove('active');
       var teamButton = document.getElementById('teamButton');
       teamButton.classList.add('active');
-      this.setState({team:true});
-      this.setState({solo: false})
     }
 
     //handles changes to the inputs
@@ -82,7 +72,7 @@ export default class Register extends Component {
     // these are all the data that we need to send to the server
     //this works perfectly fine
     componentDidMount(){
-      axios.get('http://127.0.0.1:5000/registerTeam')
+      axios.get('http://127.0.0.1:8002/registerTeam')
       .then(res =>
         {var result = res.data;
         this.setState({result});
@@ -94,31 +84,7 @@ export default class Register extends Component {
     // it doesn't work until you click the submit button.
     mySubmitHandler = (event) =>{
       event.preventDefault();
-      if(this.checkPassword()){
-        if(this.state.solo){
-          axios.post('http://127.0.0.1:5000/registerTeam', 
-          {
-            TeamName: this.state.TeamName,
-            Name: this.state.Name1,
-            StudentId: this.state.StudentId1,
-            SchoolName: this.state.SchoolName,
-            password: this.state.password,
-            email: this.state.email1,
-          })
-          .then(res=>
-            {var result = res.data;
-            this.setState({result});
-            if (result.Result === 0){
-              this.setState({redirect_url: '/login'})
-            }
-            else{
-              console.log('nothing');
-            }
-
-          })
-        }
-        else if(this.state.team){
-          axios.post('http://127.0.0.1:5000/registerTeam', 
+      axios.post('http://127.0.0.1:8002/registerTeam', 
           {
             TeamName: this.state.TeamName,
             Name1: this.state.Name1,
@@ -131,16 +97,12 @@ export default class Register extends Component {
             StudentId4: this.state.StudentId4,
             SchoolName: this.state.SchoolName,
             password: this.state.password,
-            email1:this.state.email1,
-            email2:this.state.email2,
-            email3:this.state.email3,
-            email4:this.state.email4,
 
           })
           .then(res=>
             {var result = res.data;
             this.setState({result});
-            if (result.Result === 0){
+            if (result.Result === 1){
               this.setState({redirect_url: '/login'})
             }
             else{
@@ -149,11 +111,6 @@ export default class Register extends Component {
 
           })
         }
-    }
-      else{
-        alert("Check your password")
-      }
-
     }
 
   render() {
