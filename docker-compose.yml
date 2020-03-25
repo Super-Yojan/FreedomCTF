@@ -27,3 +27,7 @@ services:
       - cyberchase
     ports:
       - "8002:8002"
+ frontdnd:
+    build: ./FrontEnd
+    ports:
+      - "80:3000"
