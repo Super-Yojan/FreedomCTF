@@ -164,71 +164,89 @@ export default class Register extends Component {
         return (
 
             <React.Fragment>
+              <h1 class="form">Register</h1>
             <form onSubmit={this.mySubmitHandler}>
-              <h1>Register</h1>
-              <hr/>
 
               <label>Team Name</label>
+              <div>
               <i className="fa fa-user"></i>
               <input name="TeamName" type="text" placeholder="Team Name" value={this.state.TeamName} onChange={this.handleChange} required/> <br/>
-
+              </div>
               <label>Password</label>
-              <i className="fa fa-key"></i>
+              <div>
+              <i class="fa fa-lock"></i>
               <input name="password" type="password" placeholder="******" value ={this.state.password} onChange={this.handleChange} required/><br/>
-
+              </div>
               <label>Confirm Password</label>
-              <i className="fa fa-key"></i>
+              <div>
+              <i class="fa fa-lock"></i>
               <input name="confirmPass" type="password" placeholder="******" value={this.state.confirmPass} onChange={this.handleChange} required/><br/>
-
+              </div>
               <label>School Name</label>
-              <i className="fa fa-key"></i>
+              <div>
+              <i class="fa fa-building"></i>
               <input name="SchoolName" value={this.state.SchoolName} onChange={this.handleChange} required/>
-
+              </div>
               <button type = "button" onClick={this.solo} id="soloButton">Solo</button>
               <button type = "button" onClick={this.team} id="teamButton">Team</button>
 
               <div id="Solo">
                 <label>Full Name</label>
+                <div>
                 <i className="fa fa-user"></i>
                 <input type="text" name="Name1" placeholder="Name" value ={this.state.Name1} onChange = {this.handleChange} required/><br/>
-
+                </div>
                 <label>Email</label>
-                <i className="fa fa-at"></i>
-                <input type="email" name="StudentId1" placeholder="00000000@lcps.org" value = {this.state.email1} onChange={this.handleChange} required/><br/>
-                <input type="submit" name ="SoloRegister" onClick={this.mySubmitHandler}/>
+                <div>
+                <i className="fa fa-envelope"></i>
+                <input type="email" name="StudentId1" placeholder="StudentID@lcps.org" value = {this.state.email1} onChange={this.handleChange} required/><br/>
+                </div>
+                <input type="submit" name ="SoloRegister" onClick={this.mySubmitHandler} value="Register"/>
 
               </div>
 
               <div id="Team">
                 <label>Team Member 1</label>
+                <div>
                 <i className="fa fa-users"></i>
                 <input type="text" name="Name1" placeholder="Full Name" value={this.state.Name1} onChange ={this.handleChange} required/><br/>
+                </div>
                 <label>Email</label>
-                <i className="fa fa-at"></i>
-                <input type="email" name="StudentId1" placeholder="00000000@lcps.org" value = {this.state.email1} onChange={this.handleChange}  required/><br/>
-
+                <div>
+                <i className="fa fa-envelope"></i>
+                <input type="email" name="StudentId1" placeholder="StudentID@lcps.org" value = {this.state.email1} onChange={this.handleChange}  required/><br/>
+                </div>
                 <label>Team Member 2</label>
+                <div>
                 <i className="fa fa-users"></i>
                 <input type="text" name="Name2" placeholder="Full Name" value={this.state.Name2} onChange ={this.handleChange} required/><br/>
+                </div>
                 <label>Email</label>
-                <i className="fa fa-at"></i>
-                <input type="email" name="StudentId2" placeholder="00000000@lcps.org" value = {this.state.email2} onChange={this.handleChange}  required/><br/>
-
+                <div>
+                <i className="fa fa-envelope"></i>
+                <input type="email" name="StudentId2" placeholder="StudentID@lcps.org" value = {this.state.email2} onChange={this.handleChange}  required/><br/>
+                </div>
                 <label>Team Member 3</label>
+                <div>
                 <i className="fa fa-users"></i>
                 <input type="text" name="Name3"  placeholder="Full Name" value={this.state.Name3} onChange ={this.handleChange}/><br/>
+                </div>
                 <label>Email</label>
-                <i className="fa fa-at"></i>
-                <input type="email" name="StudentId4" placeholder="00000000@lcps.org" value = {this.state.email3} onChange={this.handleChange} />  <br/>
-
+                <div>
+                <i className="fa fa-envelope"></i>
+                <input type="email" name="StudentId4" placeholder="StudentID@lcps.org" value = {this.state.email3} onChange={this.handleChange} />  <br/>
+                </div>
                 <label>Team Member 4</label>
+                <div>
                 <i className="fa fa-users"></i>
                 <input type="text" name="Name4" placeholder="Full Name" value={this.state.Name4} onChange ={this.handleChange}/><br/>
+                </div>
                 <label>Email</label>
-                <i className="fa fa-at"></i>
-                <input type="email" name="StudentId4" placeholder="00000000@lcps.org" value = {this.state.email4} onChange={this.handleChange} />  <br/>
-                
-                <input type="submit" name ="TeamRegister" onClick={this.mySubmitHandler}/><br/>
+                <div>
+                <i className="fa fa-envelope"></i>
+                <input type="email" name="StudentId4" placeholder="StudentID@lcps.org" value = {this.state.email4} onChange={this.handleChange} />  <br/>
+                </div>
+                <input type="submit" name ="TeamRegister" onClick={this.mySubmitHandler} value="Register"/><br/>
               
               </div>
             </form>

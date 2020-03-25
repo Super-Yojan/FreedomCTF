@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import '../../css/Login.css';
+//import '../../css/Login.css';
 import { Link } from 'react-router-dom';
 //these two are something i got online for this.props.history.pussh
 import PropTypes from 'prop-types';
@@ -46,7 +46,7 @@ export default class Login extends Component {
     axios.put('http://127.0.0.1:5000/login',{data})
     .then(res => {
       console.log(res.data);
-      if (res.data.Result == 1){
+      if (res.data.Result === 1){
         this.route.push('/map')
         
         //we need to redirect to '/map' but i don't know how to do it..
@@ -63,15 +63,20 @@ export default class Login extends Component {
     render() {
         return (
             <React.Fragment>
+              <h1 class="form">Login</h1>
                     <form onSubmit={this.onSubmitHandler}>
-                    <h1>Login</h1>
-                        <label  id="uname"> Team Name Or Email</label>
+                    
+                        <label id="uname"> Team Name Or Email</label>
+                        <div>
                         <i class="fa fa-user"></i>
                         <input type="text"  name="TeamName" placeholder="Username" onChange={this.handelChange}/>
+                        </div>
                         <br/>
                         <label id="upassword"> Password</label>
-                        <i class="fa fa-at"></i>
+                        <div>
+                        <i class="fa fa-lock"></i>
                         <input type="password"  id="password" placeholder="Password" name= "TeamPassword" onChange={this.handelChange}/>
+                        </div>
                         <input type="submit" width="100px" value="Login"/>
                         <br/>
                         <Link>Forgot?</Link>
