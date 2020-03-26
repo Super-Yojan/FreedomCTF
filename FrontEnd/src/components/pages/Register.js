@@ -26,7 +26,7 @@ export default class Register extends Component {
 
     }
     this.handleChange = this.handleChange.bind(this);
-    this.mySubmitHandler = this.handleChange.bind(this);
+    this.SubmitHandler = this.handleChange.bind(this);
   }
 
 // This is for the tabs of solo and Register
@@ -72,7 +72,7 @@ export default class Register extends Component {
     // these are all the data that we need to send to the server
     //this works perfectly fine
     componentDidMount(){
-      axios.get('http://127.0.0.1:8002/registerTeam')
+      axios.get('http://localhost:8002/register')
       .then(res =>
         {var result = res.data;
         this.setState({result});
@@ -82,27 +82,29 @@ export default class Register extends Component {
 
     //Submit handler is not working for some reason
     // it doesn't work until you click the submit button.
-    mySubmitHandler = (event) =>{
+    onSubmitHandler  = (event) =>{
       event.preventDefault();
-      axios.post('http://127.0.0.1:8002/registerTeam', 
+      console.log("click");
+      axios.post('http://localhost:8002/register', 
           {
             TeamName: this.state.TeamName,
             Name1: this.state.Name1,
             Name2: this.state.Name2,
             Name3: this.state.Name3,
             Name4: this.state.Name4,
-            StudentId1: this.state.StudentId1,
-            StudentId2: this.state.StudentId2,
-            StudentId3: this.state.StudentId3,
-            StudentId4: this.state.StudentId4,
+            StudentID1: this.state.StudentId1,
+            StudentID2: this.state.StudentId2,
+            StudentID3: this.state.StudentId3,
+            StudentID4: this.state.StudentId4,
             SchoolName: this.state.SchoolName,
-            password: this.state.password,
+            TeamPassword: this.state.password,
 
           })
           .then(res=>
             {var result = res.data;
             this.setState({result});
-            if (result.Result === 1){
+            console.log(result.Result)
+            if (result.Result == 1){
               this.setState({redirect_url: '/login'});
             }
             else{
@@ -121,7 +123,7 @@ export default class Register extends Component {
 
             <React.Fragment>
               <h1 class="form">Register</h1>
-            <form onSubmit={this.mySubmitHandler}>
+            <form onSubmit={this.onSubmitHandler}>
 
               <label>Team Name</label>
               <div>
@@ -157,7 +159,6 @@ export default class Register extends Component {
                 <i className="fa fa-envelope"></i>
                 <input type="email" name="StudentId1" placeholder="StudentID@lcps.org" value = {this.state.email1} onChange={this.handleChange} required/><br/>
                 </div>
-                <input type="submit" name ="SoloRegister" onClick={this.mySubmitHandler} value="Register"/>
 
               </div>
 
@@ -202,9 +203,10 @@ export default class Register extends Component {
                 <i className="fa fa-envelope"></i>
                 <input type="email" name="StudentId4" placeholder="StudentID@lcps.org" value = {this.state.email4} onChange={this.handleChange} />  <br/>
                 </div>
-                <input type="submit" name ="TeamRegister" onClick={this.mySubmitHandler} value="Register"/><br/>
               
               </div>
+                <input type="submit" name ="SoloRegister" onClick={this.onSubmitHandler} value="Register"/>
+
             </form>
     </React.Fragment>
         )

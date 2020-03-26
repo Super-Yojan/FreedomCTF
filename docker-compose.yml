@@ -3,15 +3,22 @@ services:
  cyberchase:
   image: mysql:latest
   command: --default-authentication-plugin=mysql_native_password
-  volumes: 
-   - ./Database:/docker-entrypoint-initdb.d/:ro
   environment:
    MYSQL_ROOT_PASSWORD: "cyber@2020"
+   MYSQL_DATABASE: "cyberchase"
   ports:
    - "3306:3306"
   expose: 
    - "3306"
+ createtable:
+    restart: on-failure
+    build: ./Database
+    depends_on:
+      - login
+    links:
+      - cyberchase 
  login:
+    restart: always
     build: ./Login
     depends_on: 
       - cyberchase
@@ -19,7 +26,10 @@ services:
       - cyberchase
     ports:
       - "8000:8000"
+    expose:
+      - "8000"
  register:
+    restart: always
     build: ./Register
     depends_on: 
       - cyberchase
@@ -27,7 +37,12 @@ services:
       - cyberchase
     ports:
       - "8002:8002"
+    expose:
+      - "8002"
  frontend:
     build: ./FrontEnd
     ports:
       - "80:3000"
+    links:
+      - login
+      - register

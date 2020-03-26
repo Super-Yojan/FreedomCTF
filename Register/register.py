@@ -7,17 +7,17 @@ from datetime import datetime
 app = Flask ('__name__')
 #if you have any complain about password then we will change it later..
 cnx = mysql.connector.connect(host="cyberchase", user="root", password="cyber@2020",database="cyberchase")
-cursor = cnx.cursor()
+cursor = cnx.cursor(buffered=True)
 
 
 
 
-@app.route('/registerTeam', methods=['GET', 'POST'])
+@app.route('/register', methods=['GET', 'POST','PUT'])
 @cross_origin()
 def register():
-    jsondata= request.get_json()
-    data=jsondata.get('data')
+    
     if request.method == 'POST':
+        data= request.get_json()
         names = [data['Name1']]
         studentId = [data['StudentID1']]
 
@@ -41,15 +41,14 @@ def register():
 
 
         add_user(names,studentId,data['SchoolName'])
+        print(get_user_ids('StudentID1'))
 
-
-        query = ("insert into Team (TeamName,TeamPassword,TeamStatus,CreationDate,CreatedBy)"
-        "values(%(TeamName)s,%(TeamPassword)s,%(TeamStatus)s,%(CreationDate)s,%(CreatedBy)s)")
+        query = ("insert into Team (TeamName,TeamPassword,TeamStatus,CreationDate)"
+        "values(%(TeamName)s,%(TeamPassword)s,%(TeamStatus)s,%(CreationDate)s)")
         queryData = {'TeamName':data['TeamName'],
                     'TeamPassword':data['TeamPassword'],
                     'TeamStatus': 'Active',
                     'CreationDate': datetime.now(),
-                    'CreatedBy': data['CreatedBy']
         }
         cursor.execute(query,queryData)
         cnx.commit()
@@ -72,7 +71,7 @@ def get_team_id(team_name):
     return team_names
 
 def get_user_ids(school_ids):
-    query = ("select UserID from User"" where StudentID = %s")
+    query = ("select UserID from User where StudentID = %s")
     user_ids=[]
     for school_id in school_ids:
         cursor.execute(query,(school_id,))
@@ -123,4 +122,4 @@ def add_members(team_id,user_id):
 
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0",port=8002)
+    app.run(host="0.0.0.0",port=8002,debug=True)

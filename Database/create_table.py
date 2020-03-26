@@ -1,7 +1,7 @@
 import mysql.connector
 from mysql.connector import errorcode
 
-cnx = mysql.connector.connect(host="localhost", user="root", password="cyber@2020",database="cyberchase")
+cnx = mysql.connector.connect(host="cyberchase", user="root", password="cyber@2020",database="cyberchase")
 cursor = cnx.cursor()
 
 TABLES = {}
