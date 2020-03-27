@@ -1,120 +1,34 @@
-/* this is for top menu for challange page----start*/
-
-a.topmenu {
-    color: white;
-    padding:0;
-    float:right;
-    list-style: none;
-    top:-2em;
-    padding-top:8px;
+body {
+    overflow-x: hidden;
 }
 
-a.topmenu:hover {
-    color:firebrick;
-}
-/* this is for top menu for challange page----start*/
-
-body,html{
-    margin:0;
-    padding:0;  
-}
-
-div.fix {
-    transform: translate(2%, 30%);
-
-}
-
-h1.heading {
-    font-style: italic;
-    text-align: center;
-    font-size:60;
-    font-style: Tahoma;
-    }
-p.English {
-    text-align: center;
-    font-size:20;
-    font-style: Tahoma;
-}
-
-p.login {
-    text-align: center;
-}
-
-a.size {
-    font-size:40;
-    vertical-align:Baseline;
-}
-img.weak {
-    vertical-align:middle;
-    margin:6;
-}
-
-nav.menu {
-    font-weight: bold;
-    font-size:20;
-    font-style: Comic;
-}
-nav{
+.inside {
+    height: 100%;
+    width: 0;
     position: fixed;
-    top:0px;
-    width: 100%;
+    z-index: 1000;
+    top:50;
+    left:0;
     background-color: black;
-    z-index: 1;
-}
-nav img{
+    opacity: .9;
+    overflow-x: hidden;
 
-    height: 55px;
 }
 
-nav a{
-    margin-left: 3em;
-    text-decoration: none;
-    color: white;
+
+span.slide {
+    position: fixed;
+    top: 300;
+    border: 1px solid black;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 1px;
+    padding-right: 3px;
+    background-color: gainsboro;
+    border-radius:8px;
+    
 }
 
-nav ul{
-    margin-right: 3em;
-    list-style: none;
-    float:right;
-    margin-top:-0.1em;
-}
-
-nav ul a{
-    float: right;
-    text-decoration: none;
-    color: #BF9518;
-    padding: 0em;
-}
-nav ul a:hover{
-    color: white;
-}
-header{
-    margin-top: 6em;
-}
-
-header img{
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
-    height: 200px;
-    width: 200px;
-}
-main{
-    position: absolute;
-    margin-top: 10em;
-    margin-left: 10em;
-    margin-right: 10em;
-}
-main h1{
-    text-align: center;
-}
-main p{
-    text-align: center;
-}
-
-/* menu css endddddddddddddddddddddddddddddddddddddddddddddddddsss*/
-
-/* challenge-------------------------------------------*/
 td.C2 {
     border: 1px solid black;
     border-radius:2px;
@@ -157,6 +71,5 @@ table.solved {
     margin-left:2%;
     padding-left:30px;
     padding-right:30px;
-    padding:15px;    
+    padding:15px;
 }
-/* challenge-------------------------------------------*/
