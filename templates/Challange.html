@@ -1,41 +1,35 @@
-<html>
-<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-<link rel="stylesheet" href="challenge.css">
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="for.css">
-    <title>Freedom CTF</title>
-</head>
+<link rel="stylesheet" type="text/css" href="challange.css">
 
-<body>
-    <nav class="Menu">
-        <a class="size" href="#">Freedom Cyber Chase</a>
-            <img class="weak"src="https://www.lcps.org/cms/lib/VA01000195/Centricity/Template/GlobalAssets/images///logos/FreedomHS-eaglehead177x160.png" alt="Freedom">
-           
-    <!-- this is new code for challange--------------------->
-        <ul>
-            <a class="topmenu" herf="#"><li>Log Out</li></a>
-            <a class="topmenu"id="totalpoints"><li>000</li></a>
-            <a class="topmenu" id="TMname"><li>Team Name</li></a>
-        </ul>
-    <!-- this is new code for challange--------------------->
-       
-        <ul align="right">
-            <a href="#">
-                <li>News</li>
-            </a>
-            <a href="#">
-                <li>Scoreboard</li>
-            </a>
-            <a href="#">
-                <li>Challenges</li>
-            </a>
-        </ul>
-    </nav>
+<script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js"></script>
+
+<script>
+function openSlideMenu(){
+    document.getElementById('content').style.marginLeft = '250px';
+    document.getElementById('menu').style.width = '250px';
+
+}
     
-    <div class="fix">    
-    <table>
+function closeSlideMenu(){
+    document.getElementById('content').style.marginLeft='0';
+    document.getElementById('menu').style.width = '0';
+}
+</script>
+
+<head>
+    <body>
+        
+        <div id="content">
+           
+        <span class="slide">
+            <a herf="#" ondblclick="openSlideMenu()" onclick="closeSlideMenu()">
+                
+                <i class="fas fa-angle-double-left"></i>    
+            </a>
+        </span>
+            
+        <div id="menu" class="inside">
+            
+        <table>
             <tr>
                 <td class="headC1"> Challange<br>Categories</td>
             </tr>
@@ -65,6 +59,10 @@
                 <td class="C2" id="howmanysolves">No solves <span id="redetc" class="red">0</td>
             </tr>
     </table>
-    </div>    
-    
-</html>
+        
+        </div>
+            
+        </div>
+        
+    </body>
+</head>
