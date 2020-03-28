@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-//import '../../css/Login.css';
+import '../../website.css';
 import { Link } from 'react-router-dom';
 import { withRouter } from "react-router-dom";
 //these two are something i got online for this.props.history.pussh
@@ -56,18 +56,18 @@ class Login extends Component {
               <h1 class="form">Login</h1>
                     <form onSubmit={this.onSubmitHandler}>
                     
-                        <label id="uname"> Team Name Or Email</label>
+                        <label id="uname" className ="entry-form-label"> Team Name Or Email</label>
                         <div>
                         <i class="fa fa-user"></i>
-                        <input type="text"  name="TeamName" placeholder="Username" onChange={this.handelChange}/>
+                        <input className = "entry-form-input" type="text"  name="TeamName" placeholder="Username" onChange={this.handelChange}/>
                         </div>
                         <br/>
-                        <label id="upassword"> Password</label>
+                        <label id="upassword" className="entry-form-label"> Password</label>
                         <div>
                         <i class="fa fa-lock"></i>
-                        <input type="password"  id="password" placeholder="Password" name= "TeamPassword" onChange={this.handelChange}/>
+                        <input className="entry-form-input" type="password"  id="password" placeholder="Password" name= "TeamPassword" onChange={this.handelChange}/>
                         </div>
-                        <input type="submit" width="100px" value="Login"/>
+                        <input className="entry-form-input" type="submit" width="100px" value="Login"/>
                         <br/>
                         <Link to="/forgot">Forgot?</Link>
                         <br/>
