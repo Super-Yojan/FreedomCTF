@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 //import '../../css/Login.css';
 import { Link } from 'react-router-dom';
-import { Redirect } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 //these two are something i got online for this.props.history.pussh
 import PropTypes from 'prop-types';
 import axios from 'axios';
 
-export default class Login extends Component {
+class Login extends Component {
 
   constructor(props){
     super(props);
@@ -40,9 +40,9 @@ export default class Login extends Component {
       TeamPassword:this.state.TeamPassword
     }).then(res => {
           console.log(res.data);
-          if (res.data.Result === 1){
-            this.setState({redirect_url : '/map'});
-        console.log(this.props.location);
+          if (res.data.Result == 1){
+            console.log('Inside if');
+            this.props.history.push('/map');
       }
     } );
   }
@@ -51,10 +51,6 @@ export default class Login extends Component {
 
 
     render() {
-      if(this.state.redirect_url){
-        return (<Redirect to = {this.state.redirect_url}/>)
-    }
-    else{
         return (
             <React.Fragment>
               <h1 class="form">Login</h1>
@@ -73,7 +69,7 @@ export default class Login extends Component {
                         </div>
                         <input type="submit" width="100px" value="Login"/>
                         <br/>
-                        <Link>Forgot?</Link>
+                        <Link to="/forgot">Forgot?</Link>
                         <br/>
                         <Link to ="/register">Create an Account</Link>
 
@@ -83,5 +79,8 @@ export default class Login extends Component {
         )
 
     }
-  }
+  
 }
+
+
+export default withRouter(Login);

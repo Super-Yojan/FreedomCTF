@@ -2,11 +2,12 @@ from flask import Flask , jsonify, request,render_template
 from flask_cors import CORS,cross_origin
 import mysql.connector
 from datetime import datetime
+import hashlib
 
 
 app = Flask ('__name__')
 #if you have any complain about password then we will change it later..
-cnx = mysql.connector.connect(host="cyberchase", user="root", password="cyber@2020",database="cyberchase")
+cnx = mysql.connector.connect(host="localhost", user="root", password="cyber@2020",database="cyberchase")
 cursor = cnx.cursor(buffered=True)
 
 
@@ -41,23 +42,28 @@ def register():
 
 
         add_user(names,studentId,data['SchoolName'])
-        print(get_user_ids('StudentID1'))
+        print(data['StudentID1'])
 
-        query = ("insert into Team (TeamName,TeamPassword,TeamStatus,CreationDate)"
-        "values(%(TeamName)s,%(TeamPassword)s,%(TeamStatus)s,%(CreationDate)s)")
-        queryData = {'TeamName':data['TeamName'],
-                    'TeamPassword':data['TeamPassword'],
+        team_exists=get_team_id(data['TeamName'])
+        print(len(team_exists))
+        if len(team_exists)==0:
+            query = ("insert into Team (TeamName,TeamPassword,TeamStatus,CreationDate,CreatedBy)"
+            "values(%(TeamName)s,%(TeamPassword)s,%(TeamStatus)s,%(CreationDate)s,%(CreatedBy)s)")
+            queryData = {'TeamName':data['TeamName'],
+                    'TeamPassword':str(hashlib.sha256(data['TeamPassword']).hexdigest()),
                     'TeamStatus': 'Active',
                     'CreationDate': datetime.now(),
-        }
-        cursor.execute(query,queryData)
-        cnx.commit()
-        team_id= get_team_id(data['TeamName'])
-        student_id = get_user_ids(studentId)
-        add_members(team_id,student_id)
+                    'CreatedBy':data['StudentID1']
+            }
+            cursor.execute(query,queryData)
+            cnx.commit()
+            team_id= get_team_id(data['TeamName'])
+            student_id = get_user_ids(studentId)
+            add_members(team_id,student_id)
 
-        return jsonify({'Status':'Sucessful','Result':'1','Message':'Sucessfully created new Team'})
-
+            return jsonify({'Status':'Sucessful','Result':'1','Message':'Sucessfully created new Team'})
+        else:
+            return jsonify({'Status':'Failes','Result':'0','Message':'Team already exist'})
     else:
         return jsonify({'Status':'Failed','Error':'GET request is not valid','Result':'0'})
 

@@ -12,8 +12,9 @@ export default function NavMenu() {
                 <ul>
                     <Link to = '/'> Home </Link> 
                     <Link to = '/login'>Login</Link>
-                    <Link to = '/map'>Map</Link>
+                {/*    <Link to = '/map'>Map</Link> */}
                     <Link to = '/scoreboard'>Scoreboard</Link>
+                {/*//we need some logic here*/}
                     <Link to = '/register'>Register</Link>
                 </ul>
             </nav>

@@ -10,6 +10,9 @@ export default class Scoreboard extends Component {
     render() {
       return(
       <React.Fragment>
+
+
+      <h1 class="form">Scoreboard</h1>
       <div class="top_three">
 
       <div class="Third">

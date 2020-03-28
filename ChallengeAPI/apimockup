@@ -1,0 +1,201 @@
+{
+	"Challenges":{
+		"Category":{
+			"Linux":{
+				"1":{
+					"Title":"Something",
+					"Question":"Something",
+					"Solved":"False",
+					"Hints":"Something",
+					"HintsScore":000,
+					"TotalScore":000,
+				}
+				
+				"2":{
+					"Title":"Something",
+					"Question":"Something",
+					"Solved":"False",
+					"Hints":"Something",
+					"HintsScore":000,
+					"TotalScore":000,
+				}
+
+				"3":{
+					"Title":"Something",
+					"Question":"Something",
+					"Solved":"False",
+					"Hints":"Something",
+					"HintsScore":000,
+					"TotalScore":000,
+				}
+			}
+			"Reverse Eng":{
+
+				"1":{
+					"Title":"Something",
+					"Question":"Something",
+					"Solved":"False",
+					"Hints":"Something",
+					"HintsScore":000,
+					"TotalScore":000,
+				}
+
+				"2":{
+					"Title":"Something",
+					"Question":"Something",
+					"Solved":"False",
+					"Hints":"Something",
+					"HintsScore":000,
+					"TotalScore":000,
+				}
+
+				"3":{
+					"Title":"Something",
+					"Question":"Something",
+					"Solved":"False",
+					"Hints":"Something",
+					"HintsScore":000,
+					"TotalScore":000,
+				}
+			}
+			"Web Exploitation":{
+
+				"1":{
+					"Title":"Something",
+					"Question":"Something",
+					"Solved":"False",
+					"Hints":"Something",
+					"HintsScore":000,
+					"TotalScore":000,
+				}
+
+				"2":{
+					"Title":"Something",
+					"Question":"Something",
+					"Solved":"False",
+					"Hints":"Something",
+					"HintsScore":000,
+					"TotalScore":000,
+				}
+
+				"3":{
+					"Title":"Something",
+					"Question":"Something",
+					"Solved":"False",
+					"Hints":"Something",
+					"HintsScore":000,
+					"TotalScore":000,
+				}
+			}
+		}
+	}
+}
+
+
+
+{
+	"Category":[
+	{
+		"Name":"Linux",
+		"Challenges":[
+		{
+			"id":1,
+			"Title":"Something",
+			"Question":"Something",
+			"Solved":"False",
+			"Hints":"Something",
+			"HintsScore":000,
+			"TotalScore":000,
+		},
+		{
+			"id":2,
+			"Title":"Something",
+			"Question":"Something",
+			"Solved":"False",
+			"Hints":"Something",
+			"HintsScore":000,
+			"TotalScore":000,
+		},
+		{
+			"id":3,
+			"Title":"Something",
+			"Question":"Something",
+			"Solved":"False",
+			"Hints":"Something",
+			"HintsScore":000,
+			"TotalScore":000,
+		},
+
+		],
+
+	},
+	{
+		"Name":"WebExploit",
+		"Challenges":[
+		{
+			"id":1,
+			"Title":"Something",
+			"Question":"Something",
+			"Solved":"False",
+			"Hints":"Something",
+			"HintsScore":000,
+			"TotalScore":000,
+		},
+		{
+			"id":2,
+			"Title":"Something",
+			"Question":"Something",
+			"Solved":"False",
+			"Hints":"Something",
+			"HintsScore":000,
+			"TotalScore":000,
+		},
+		{
+			"id":3,
+			"Title":"Something",
+			"Question":"Something",
+			"Solved":"False",
+			"Hints":"Something",
+			"HintsScore":000,
+			"TotalScore":000,
+		},
+
+		],
+
+	},
+	{
+		"Name":"Recon",
+		"Challenges":[
+		{
+			"id":1,
+			"Title":"Something",
+			"Question":"Something",
+			"Solved":"False",
+			"Hints":"Something",
+			"HintsScore":000,
+			"TotalScore":000,
+		},
+		{
+			"id":2,
+			"Title":"Something",
+			"Question":"Something",
+			"Solved":"False",
+			"Hints":"Something",
+			"HintsScore":000,
+			"TotalScore":000,
+		},
+		{
+			"id":3,
+			"Title":"Something",
+			"Question":"Something",
+			"Solved":"False",
+			"Hints":"Something",
+			"HintsScore":000,
+			"TotalScore":000,
+		},
+
+		],
+
+	},
+	]
+}

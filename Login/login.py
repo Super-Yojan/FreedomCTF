@@ -2,11 +2,12 @@ from flask import Flask , jsonify, request,render_template
 from flask_cors import CORS,cross_origin
 import mysql.connector
 from datetime import datetime
+import hashlib
 
 
 app = Flask ('__name__')
 #if you have any complain about password then we will change it later..
-cnx = mysql.connector.connect(host="cyberchase", user="root", password="cyber@2020",database="cyberchase")
+cnx = mysql.connector.connect(host="localhost", user="root", password="cyber@2020",database="cyberchase")
 cursor = cnx.cursor(buffered=True)
 
 
@@ -16,7 +17,7 @@ def login():
     query= "Select * from Team where TeamName=%s and TeamPassword=%s"
     data = request.get_json()
     print(data)
-    cursor.execute(query,(data['TeamName'],data['TeamPassword']))
+    cursor.execute(query,(data['TeamName'],str(hashlib.sha256(data['TeamPassword']).hexdigest())))
     print(cursor)
     for TeamName in cursor:
         print(TeamName[0])
