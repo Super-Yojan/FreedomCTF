@@ -10,16 +10,17 @@ from datetime import datetime,timedelta
 
 app = Flask('__name__')
 app.secret_key= os.urandom(16)
-cnx = mysql.connector.connect(host="localhost",user="root",password="cyber@2020",database="cyberchase")
+cnx = mysql.connector.connect(host="cyberchase",user="root",password="cyber@2020",database="cyberchase")
 cursor = cnx.cursor(buffered=True)
 app.config['MAIL_SERVER']='smtp.gmail.com'
-app.config['MAIL_PORT'] = 465
+app.config['MAIL_PORT'] = 587
 app.config['MAIL_USERNAME'] = 'freedomc7f@gmail.com'
 app.config['MAIL_PASSWORD'] = 'Fr33d0m_c7F'
-app.config['MAIL_USE_TLS'] = False
-app.config['MAIL_USE_SSL'] = True
+app.config['MAIL_DEFAULT_SENDER']=('Freedom CTF','freedomc7f@gmail.com')
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USE_SSL'] = False
 mail= Mail(app)
-myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+myclient = pymongo.MongoClient("mongodb://forgotlog:27017/")
 
 mydb = myclient["tokens"]
 
@@ -42,12 +43,12 @@ def send_mail():
 		collection.insert_one(mydict)
 		email= Email
 		#need to change this default email
-		send_Email(["gautamyojan0@gmail.com",],TeamName)
+		send_Email([email,],TeamName)
 		return jsonify({"Message":"Email Sent to {}".format(email)})
 
 def send_Email(emails,TeamName):
 	msg = Message('Hello', sender="freedomc7f@gmail.com",recipients=emails)
-	msg.body="To reset your password visit:"+"http://localhost:3000/reset?token="+ str(session['token'])+"&TeamName="+TeamName
+	msg.body="To reset your password visit:"+"http://34.68.171.226/reset?token="+ str(session['token'])+"&TeamName="+TeamName
 	mail.send(msg)
 	return "Sent"
 

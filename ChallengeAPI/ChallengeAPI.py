@@ -12,8 +12,11 @@ cursor = cnx.cursor(buffered=True)
 app.route('/getChallengeId')
 @cross_origin()
 def get_challenge_id():
-	query = "select id from Challenges"
-	
+	query = "select * from Challenges"
+	cursor.execute(query)
+	challenge=[]
+	for challenges in cursor:
+		challenges.apppen({"id":challenges[0],"":challenges[1],""})
 
 
 

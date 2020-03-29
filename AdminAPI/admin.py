@@ -9,6 +9,7 @@ cursor = cnx.cursor()
 app = Flask(__name__)
 
 @app.route('/addCategory',methods=['POST'])
+def add_category():
     query= ("insert into Category(CategoryName,CategoryStatus)" "Values (%(CategoryName)s, %(CategoryStatus)s)")
     data = request.get_json().get('data')
     cursor.execute(query,(data['CategoryName'],'Active'))
@@ -46,8 +47,10 @@ def get_categories():
 @app.route('/getCategory')
 def get_category():
     query= 'select * from Category where id=%s'
+    category=''
     cursor.execute(query,(request.args.value('id'),))
-
+    for cat in cursor:
+        category.append({"Name":cat[1],"Status":cat[2]})
 # this is the end of Category
 
 

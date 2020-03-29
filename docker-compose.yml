@@ -18,7 +18,7 @@ services:
     links:
       - cyberchase 
  login:
-    restart: always
+    restart: on-failure
     build: ./Login
     depends_on: 
       - cyberchase
@@ -29,7 +29,7 @@ services:
     expose:
       - "8000"
  register:
-    restart: always
+    restart: on-failure
     build: ./Register
     depends_on: 
       - cyberchase
@@ -39,6 +39,19 @@ services:
       - "8002:8002"
     expose:
       - "8002"
+ forgot:
+    restart: on-failure
+    build: ./Forgot 
+    depends_on:
+      - login
+    links:
+      - cyberchase
+      - forgotlog
+    ports:
+      - 8003:8003
+ forgotlog:
+    image: mongo
+    restart: always
  frontend:
     build: ./FrontEnd
     ports:

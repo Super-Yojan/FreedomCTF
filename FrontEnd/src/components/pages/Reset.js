@@ -68,8 +68,7 @@ class Reset extends Component {
 			if(res.data.Result == 1){
 				this.props.history.push('/login');
 			}
-		});
-		}
+		});}
 		else{
 			alert("Password should match to proceed")
 		}

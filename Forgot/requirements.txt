@@ -2,4 +2,5 @@ flask
 mysql-connector
 docker-compose
 flask-cors
-hashlib
+pymongo
+flask-mail
