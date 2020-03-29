@@ -53,16 +53,16 @@ class Login extends Component {
     render() {
         return (
             <React.Fragment>
-              <h1 class="form">Login</h1>
-                    <form onSubmit={this.onSubmitHandler}>
+              <h1 class="entry-header">Login</h1>
+                    <form className="entry-form" onSubmit={this.onSubmitHandler}>
                     
-                        <label id="uname" className ="entry-form-label"> Team Name Or Email</label>
+                        <label className="entry-form-label" id="uname" className ="entry-form-label"> Team Name Or Email</label>
                         <div>
                         <i class="fa fa-user"></i>
-                        <input className = "entry-form-input" type="text"  name="TeamName" placeholder="Username" onChange={this.handelChange}/>
+                        <input  className = "entry-form-input" type="text"  name="TeamName" placeholder="Username" onChange={this.handelChange}/>
                         </div>
                         <br/>
-                        <label id="upassword" className="entry-form-label"> Password</label>
+                        <label className="entry-form-label" id="upassword" className="entry-form-label"> Password</label>
                         <div>
                         <i class="fa fa-lock"></i>
                         <input className="entry-form-input" type="password"  id="password" placeholder="Password" name= "TeamPassword" onChange={this.handelChange}/>
