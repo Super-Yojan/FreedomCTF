@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+:root{
+    font-size: 18px;
+    --nav-color: #BF9518;
+    --nav-bg: black;
+    --entry-h1-color: #124;
+    --entry-button-color: rgb(26,115,232);
+    --entry-icon-color: #190452;
+}
+
+.main-img{
+    display: block;
+    transform: translateY(10px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.main-img:hover{
+    animation: color-rotate 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/*the fun stuff*/
+@keyframes color-rotate{
+    from{
+        filter: hue-rotate(0deg);
+    }
+    to{
+        filter: hue-rotate(360deg);
+    }
+}
+
+main{
+    text-align: center;
+}
+h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:0;
+    padding:0;
+}
+
+/*–––––––––––––––––––––––––––––––  NavBar ––––––––––––––––––––––––––––––– */
+
+.nav ul{
+    list-style: none;
+    margin:0;
+    padding: 0;
+}
+
+.navbar{
+    background-color: var(--nav-bg);
+}
+
+.navbar-nav{
+    display:flex;
+    height: auto;
+    padding: 15px;
+}
+
+.navbar-nav :hover{
+    color:white;
+}
+
+.navbar-item{
+    text-decoration: none;
+    padding:15px;
+    color: var(--nav-color);
+}
+.navbar-logo{
+    font-size:1.5rem;
+    font-family:monospace;
+    text-decoration: none;
+    color:white;
+    width: 100%;
+}
+.navbar-logo-img{
+    position: fixed;
+    padding:15px;
+    height:3rem;
+    width:3rem;
+    transform: translateY(-40px); /* <-- a bit janky might fix later */
+}
+
+/*–––––––––––––––––––––––––––––––  Register and Login ––––––––––––––––––––––––––––––– */
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .entry-body{
+    margin-top: 3rem;
+  }
+  
+  .active{
+    border-bottom: solid 4px red;
+  }
+
+  .entry-header{
+    margin-bottom: 20px;
+    text-align: center;
+    background: var(--entry-h1-color);
+    color: white;
+    padding: 70px;
+    padding-bottom: 10px;
+    font-size: 4rem;
+  }
+  .entry-hr{
+    margin-bottom: 20px;
+    border: none;
+    border-bottom: .5px solid;
+  }
+  .entry-form{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    width: 500px;
+    padding:40px;
+    border-radius: 25px;
+  }
+  .entry-form-label{
+    position: relative;
+    font-size: 0.77rem;
+    font-family: Montserrat;
+    padding-left: 15px;
+    padding-bottom: 10px;
+    font-weight: bold;
+  }
+  .entry-form-input{
+    display: block;
+    margin-bottom: 10px;
+    width: 95%;
+    padding: 10px;
+  }
+  
+  .entry-form-input[type='submit']{
+    margin-top: 10px;
+    padding: 5px 70px;
+    text-align: center;
+    border-radius: 12px;
+    font-weight: bold;
+    background: var(--entry-button-color);
+    color:white;
+    font-family: sans-serif;
+    font-size: 20px;
+    width: 50%;
+    border:none;
+    transform: translate(50%);
+  }
+  
+  .entry-form-div{
+    display: flex;
+  }
+  
+  .entry-form-button{
+    width: 50%;
+    display: inline;
+    margin: 0px;
+    padding: 5px;
+    border: none;
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
+
+  i{
+    position: absolute;
+    background-color: #190452;
+    color: white;
+    font-size: 40px;
+    padding:10px;
+    width: 20px;
+    text-align: center;
+    transform: translate(-30px,0px);
+  }
+  
+  #Solo, #Team{
+    display: none;
+  }
+
+/*–––––––––––––––––––––––––––––––  Scoreboard ––––––––––––––––––––––––––––––– */
+
+.first_team{
+    background-color: #D4AF37;
+    padding: 25%;
+    border-radius: 50%;
+    transform: translateY(-100%);
+    color:white;
+    font-weight: bold;
+}
+.second_team{
+    background-color: #D4AF37;
+    padding: 25%;
+    border-radius: 50%;
+    transform: translateY(-100%);
+    color:white;
+    font-weight: bold;
+
+}
+.third_team{
+    background-color: #D4AF37;
+    padding: 25%;
+    border-radius: 50%;
+    transform: translateY(-100%);
+    color:white;
+    font-weight: bold;
+
+}
+
+.top_three{
+    margin-top: 10%;
+    display: flex;
+    transform: translate(60%,10%);
+    margin-bottom: 5%;
+    width: 50%
+}
+.First{
+    margin-top: auto;
+    height: 200px;
+    width: 100px;
+    background: #D4AF37;
+    margin-right: 10%;
+}
+.Second{
+    margin-top: auto;
+    height: 150px;
+    width: 100px;
+    background:#aaa9ad;
+}
+.Third{
+    margin-top: auto;
+    height: 100px;
+    width: 100px;
+    background: #a97142;
+    margin-right: 10%;
+
+}
+.scoreboard_list{
+    margin-left: 10%;
+    width: 85%;
+    list-style-position: inside;
+    background-color: rgb(207, 212, 209);
+    overflow: hidden;
+}
+
+
+.scoreboard_list li{
+    width: 100%;
+    padding: 15px;
+    overflow-x: hidden;
+}
+
+.scoreboard_list li .Score{
+    float: right;
+    margin-right: 30px;
+    overflow-x: hidden;
+}
+  
+
+/*–––––––––––––––––––––––––––––––  Alert ––––––––––––––––––––––––––––––– */
+
+.alert {
+    padding: 10px;
+    background-color: red;
+    color: white;
+    margin-bottom: 15px;
+    font-size:40;
+    text-align: center;
+}
+
+/* ForestGreen- #228B22 MediumSeaGreen-	#3CB371  SpringGreen- #00FF7F red- #FF0000, Maroon- #800000, Aqua- #00FFFF DarkRed- #8B0000 FireBrick- #B22222 */
+
+.alert .close {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 50px;
+    line-height: 50px;
+    cursor: crosshair;
+    transition: 0.2s;
+}
+
+.alert .closebtn:hover {
+    color: black;
+}
+
+/*Screen sizes*/
+
+/*small screens*/
+@media only screen and (max-width: 720px){
+    .navbar{
+        position: fixed;
+        width:100%;
+        bottom: 0;
+    }
+    .navbar-logo{
+        display: none;
+    }
+    .navbar-nav{
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: space-evenly;
+    }
+    .entry .form{
+        border:none;
+    }
+    h1{
+        font-size: 2rem;
+    }
+    main{
+        font-size: 1rem;
+    }
+    .main-img{
+        width: 18rem;
+        height: 14rem;
+    }
+    .entry-form-input[type='submit']{
+        transform: translate(120px,-40px);
+      }
+}
+
+/*big screens*/
+@media only screen and (min-width:600px){
+    .navbar{
+        position: fixed;
+        top: 0;
+        height: 3rem;
+        width: 100%;
+        z-index: 5;
+    }
+    .navbar-nav{
+        align-items: center;
+        justify-content: flex-end;
+        z-index: 5;
+    }
+
+    .entry-form{
+        border: 1px solid;
+
+    }
+    h1{
+        font-size: 3rem;
+    }
+    .main-img{
+        width: 25rem;
+        height: 20rem;
+    }
+
+}

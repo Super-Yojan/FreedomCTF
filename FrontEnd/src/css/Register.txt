@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+
+*{
+  font-family: 'Montserrat', sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+
+body{
+  margin-top: 3em;
+}
+
+.active{
+  border-bottom: solid 4px red;
+}
+h1.form{
+  margin-bottom: 20px;
+  text-align: center;
+  background: #124;
+  color: white;
+  padding: 70px;
+  padding-bottom: 10px;
+  font-size: 4em;
+}
+hr{
+  margin-bottom: 20px;
+  border: none;
+  border-bottom: .5px solid;
+}
+form{
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  width: 500px;
+  border: 1px solid;
+  padding:40px;
+  border-radius: 25px;
+}
+form label{
+  position: relative;
+  font-size:14px;
+  font-family: Montserrat;
+  padding-left: 15px;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+form input{
+  display: block;
+  margin-bottom: 10px;
+  width: 95%;
+  padding: 10px;
+}
+
+form input[type='submit']{
+  margin-top: 10px;
+  padding: 5px 70px;
+  text-align: center;
+  border-radius: 12px;
+  font-weight: bold;
+  background:rgb(26,115,232);
+  color:white;
+  font-family: sans-serif;
+  font-size: 20px;
+  width: 50%;
+  border:none;
+  transform: translate(50%);
+}
+
+form div{
+  display: flex;
+}
+
+form button{
+  width: 50%;
+  display: inline;
+  margin: 0px;
+  padding: 5px;
+  border: none;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+i{
+  position: absolute;
+  background-color: #190452;
+  color: white;
+  font-size: 40px;
+  padding:10px;
+  width: 20px;
+  text-align: center;
+  transform: translate(-30px,0px);
+}
+
+#Solo, #Team{
+  display: none;
+}
