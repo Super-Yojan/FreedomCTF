@@ -1,8 +1,10 @@
+<header>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/maphilight/1.4.0/jquery.maphilight.min.js"></script>
-
+        
     <link rel="stylesheet" href="challange.css">
+</header>
 <html>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <body>
@@ -12,6 +14,7 @@
             
            <area  id="L601" title="L601" coords="140,96,90,32" shape="rect">  
             
+
         </map>
         
         <div id="linuxModal" class="modal">
@@ -26,12 +29,11 @@
 
                     <div class="modal-body">
                       <p>What is linux?</p>
-                        <input type="text">
+                        <input type="text" id="modal-input" placeholder="Flag">
                     </div>
-                    
+                    <button>Submit</button>
                 </div>
-
-            </div>
+        </div>
         
     </body>
 </html>
@@ -41,7 +43,7 @@
 
     // Get the button that opens the modal
     var area = document.getElementById('L601');
-
+    
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
 
@@ -50,7 +52,7 @@
       modal.style.display = "block";
     }
 
-    // When the user clicks on <span> (x), close the modal
+    // When the user clicks on (x) the modal is closed
     span.onclick = function() {
       modal.style.display = "none";
     }
