@@ -2,4 +2,3 @@ flask
 mysql-connector
 docker-compose
 flask-cors
-hashlib
