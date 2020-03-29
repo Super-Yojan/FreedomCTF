@@ -1,0 +1,166 @@
+<link rel="stylesheet" href="cssnewregister.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<scriptsrc="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <title>Freedom CTF</title>
+
+
+<body>
+    <nav class="Menu">
+        <a class="size" href="#">Freedom Cyber Chase</a>
+            <img class="weak"src="https://www.lcps.org/cms/lib/VA01000195/Centricity/Template/GlobalAssets/images///logos/FreedomHS-eaglehead177x160.png" alt="Freedom">
+        <i class="material-icons menu " id="nav_menu" style="font-size:36px;color: white;float: right;padding: 5px">menu</i>
+        
+        <div id="overlay"></div>
+        <ul id="nav_ul">
+            <a href="index.html">
+                <li>Home</li>
+            </a>
+            <a href="Scoreboard.html">
+                <li>Scoreboard</li>
+            </a>
+            <a href="Challange.html">
+                <li>Challenges</li>
+            </a>
+            <a href="Register.html">
+                <li>Register</li>
+            </a>
+            <a href="login.html">
+                <li>Login</li>
+            </a>
+        </ul>
+    </nav>
+
+
+
+<form action="/action_page.php" style="max-width:500px;margin:auto">
+    <div class="Reg-all ">
+    <h1>Register</h1>
+    <hr>
+    <label for="Username"><b>Username</b></label>
+
+    <div class="add-icon">
+        <i class="fa fa-user icon"></i>
+        <input type="text" id="username" placeholder="username/ team name" required>
+    </div>
+        
+    <p class="special">Warning: Your Username may be visible to other users. Do not include your real name or any other personal information.</p>
+    
+    <label for="psw"><b>Password</b></label>
+         
+    <div class="add-icon">
+        <i class="fa fa-key icon"></i>
+        <input type="password" id="pwd" placeholder="password" required>
+    </div>
+        
+    <label for="confirm-psw"><b>Confirm Password</b></label>
+        
+    <div class="add-icon">
+        <i class="fa fa-key icon"></i>
+         <input type="password" id="confirm-psw" placeholder="Confirm Password" required>
+    </div>
+    
+    <div class="GoBack">
+        <p>Go back to <a href="logi n.html">Login.</a></p> 
+        <p class="Forgot"><a href="#">Forgot your password?</a></p>
+    </div>
+        
+    <hr>
+    
+    <p class="special">Note: Please only use your lcps email.</p>
+    
+    <label for="TM1"><b>Team Member 1*</b></label>
+           
+    <div class="add-icon">
+        <i class="fa fa-group icon"></i>
+           <input type="text" id="TM1" placeholder="Name" required>
+    </div>    
+    
+    <label for="email"><b>Email*</b></label>
+        
+    <div class="add-icon">
+        <i class="fa fa-envelope icon"></i>
+        <input type="text" id="Email" placeholder="StudentID@lcps.org" required>
+    </div>    
+   
+    
+    <hr>
+        
+    <label for="TM2"><b>Team Member 2</b></label>
+    
+    <div class="add-icon">
+        <i class="fa fa-group icon"></i>
+        <input type="text" id="TM2" placeholder="Name">
+    </div>        
+        
+    <label for="email"><b>Email:</b></label>
+        
+     <div class="add-icon">
+        <i class="fa fa-envelope icon"></i>
+        <input type="text" id="Email" placeholder="StudentID@lcps.org">
+    </div>    
+           
+    <hr>
+        
+    <label for="TM3"><b>Team Member 3</b></label>
+        
+     <div class="add-icon">
+        <i class="fa fa-group icon"></i>
+        <input type="text" id="TM3" placeholder="Name">
+    </div>           
+        
+    
+    <label for="email"><b>Email:</b></label>
+     <div class="add-icon">
+        <i class="fa fa-envelope icon"></i>
+        <input type="text" id="Email" placeholder="StudentID@lcps.org">
+    </div>    
+        
+    <hr>    
+        <label for="scul"><b>School Name:</b></label>
+     
+    <div class="add-icon">
+        <i class="fa fa-building icon"></i>
+        <input type="text" id="scul" placeholder="School Name">
+    </div>      
+        
+    <hr>  
+    <button type="submit" class="Regbtn">Register</button>
+        
+    </div>
+    </form>
+<br><br>
+    
+   <script>
+        
+        var nav_menu = document.getElementById('nav_menu');
+        var nav_ul = document.getElementById('nav_ul');
+        var overlay = document.getElementById('overlay');
+        
+        nav_menu.addEventListener('click',()=>{
+           if(overlay.className === 'overlay'){
+               overlay.classList.remove('overlay');
+               nav_ul.style.visibility='hidden';
+           } 
+            else{
+                overlay.classList.add('overlay');
+                nav_ul.style.visibility='visible';
+            }
+            
+        });
+        window.addEventListener('resize',()=>{
+        if (window.innerWidth > 800){
+            nav_ul.style.visibility='visible';
+        }   
+            else{
+                nav_ul.style.visibility='hidden';
+               overlay.classList.remove('overlay');
+
+            }
+        });
+        
+    </script>
+    
