@@ -26,7 +26,9 @@ body {font-family: Arial, Helvetica, sans-serif;}
   padding: 0;
   font-size: 25px;
   border: 1px solid #888;
-  width: 50%;
+  width: 70%;
+/* we need a code in js that would change the width of the screen to 50% if it is in full-screen because it looks bad if the witdth is 50% in fullscreen.*/
+    
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
   -webkit-animation-name: animatetop;
   -webkit-animation-duration: 0.4s;
@@ -37,7 +39,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 #modal-input {
     padding: 10px;
-    padding-right: 20%;
+    padding-right: 43%;
 }
 
 /* this makes the animations work*/
@@ -84,3 +86,28 @@ body {font-family: Arial, Helvetica, sans-serif;}
     margin-bottom: 30px;
 }
 
+p {
+    text-align: center;
+}
+
+/*
+.fa-check {
+    color: green;
+    display: none;
+    position:absolute; 
+} 
+*/
+
+.Attempt_input::after {
+content:"Attempt Left"; 
+position: absolute; 
+margin: 8px 0px 0px -103px; 
+padding: 5px;
+font-size: 16px
+}
+
+.model_Submit {
+    padding:8.5px;
+    font-size: 16px;
+    position: absolute;
+}
