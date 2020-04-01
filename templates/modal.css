@@ -100,10 +100,11 @@ p {
 
 .Attempt_input::after {
 content:"Attempt Left"; 
+color:grey;
 position: absolute; 
-margin: 8px 0px 0px -103px; 
-padding: 5px;
-font-size: 16px
+margin: 1px 0px 0px -97px; 
+padding: 10px;
+font-size: 14px
 }
 
 .model_Submit {
