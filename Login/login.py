@@ -11,13 +11,13 @@ cnx = mysql.connector.connect(host="cyberchase", user="root", password="cyber@20
 cursor = cnx.cursor(buffered=True)
 
 
-@app.route('/login', methods=['GET','POST','PUT'])
+@app.route('/api/login', methods=['GET','POST','PUT'])
 @cross_origin()
 def login():
     query= "Select * from Team where TeamName=%s and TeamPassword=%s"
     data = request.get_json()
     print(data)
-    cursor.execute(query,(data['TeamName'],str(hashlib.sha256(data['TeamPassword']).hexdigest())))
+    cursor.execute(query,(data['TeamName'],str(hashlib.sha256(data['TeamPassword'].encode()).hexdigest())))
     print(cursor)
     for TeamName in cursor:
         print(TeamName[0])

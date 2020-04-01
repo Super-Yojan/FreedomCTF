@@ -20,7 +20,7 @@ export default class Forgot extends Component {
 
 	onSubmitHandler = (event) =>{
 		event.preventDefault();
-		axios.post('http://127.0.0.1:8003/sendMail',{"TeamName":this.state.TeamName})
+		axios.post('api/forgot/sendMail',{"TeamName":this.state.TeamName})
 		.then(res=>{
 			alert(res.data.Message);
 		});

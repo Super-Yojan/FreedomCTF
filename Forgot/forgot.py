@@ -28,7 +28,7 @@ collection = mydb["users"]
 
 #password:::Fr33d0m_c7F
 
-@app.route('/sendMail',methods=['POST','GET'])
+@app.route('/api/forgot/sendMail',methods=['POST','GET'])
 @cross_origin()
 def send_mail():
 	data=request.get_json()
@@ -52,18 +52,18 @@ def send_Email(emails,TeamName):
 	mail.send(msg)
 	return "Sent"
 
-@app.route('/reset',methods=['PUT'])
+@app.route('/api/forgot/reset',methods=['PUT'])	
 @cross_origin()
 def reset():
 	data = request.get_json()
 	query="update Team set TeamPassword=%s where TeamName=%s"
-	cursor.execute(query,(data['TeamPassword'],data['TeamName']))
+	cursor.execute(query,(str(hashlib.sha256(data['TeamPassword'].encode()).hexdigest()),data['TeamName']))
 	cnx.commit()
 	collection.drop()
 	return jsonify({"Message":"Password Changed","Result":'1'})
 
 
-@app.route('/validateToken')
+@app.route('/api/forgot/validateToken')
 @cross_origin()
 def validate_token():
 	query={"TeamName":request.args.get("TeamName"),"token":request.args.get("token")}

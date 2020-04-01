@@ -35,7 +35,7 @@ class Login extends Component {
     event.preventDefault();
 
     //This is the post call being called
-    axios.post('http://localhost:8000/login',{
+    axios.post('/api/login',{
       TeamName:this.state.TeamName,
       TeamPassword:this.state.TeamPassword
     }).then(res => {

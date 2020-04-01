@@ -23,7 +23,7 @@ class Reset extends Component {
 		this.setState({["Token"]:query.token});
 		this.setState({["TeamName"]:query.TeamName});
 		console.log(this.state.Token);
-		axios.get('http://127.0.0.1:8003/validateToken',
+		axios.get('api/forgot/validateToken',
 			{params:
 				{ 
 					token: query.token,
@@ -62,7 +62,7 @@ class Reset extends Component {
 	onSubmitHandler = (event) =>{
 		event.preventDefault();
 		if(this.state.PasswordMatch){
-		axios.put('http://127.0.0.1:8003/reset',{"TeamPassword":this.state.TeamPassword,"TeamName":this.state.TeamName})
+		axios.put('api/forgot/reset',{"TeamPassword":this.state.TeamPassword,"TeamName":this.state.TeamName})
 		.then(res=>{
 			alert(res.data.Message);
 			if(res.data.Result == 1){

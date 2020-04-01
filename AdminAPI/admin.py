@@ -8,36 +8,42 @@ cursor = cnx.cursor()
 
 app = Flask(__name__)
 
+
+#works
 @app.route('/addCategory',methods=['POST'])
 def add_category():
-    query= ("insert into Category(CategoryName,CategoryStatus)" "Values (%(CategoryName)s, %(CategoryStatus)s)")
-    data = request.get_json().get('data')
+    query= ("insert into Categories(CategoryName,CategoryStatus)" "Values (%s, %s)")
+    data = request.get_json()
     cursor.execute(query,(data['CategoryName'],'Active'))
     cnx.commit()
     return jsonify({'Result':'1','Message':'Category with name {} was added to category table'.format(data['CategoryName']),'Status':'Sucessful'})
 
 
+#works
 @app.route('/diactivateCategory',methods=['PUT'])
 def diactivate_category():
-    query=('update Category set CategoryStatus = %s Where CategoryID=%s')
-    data = request.get_json().get('data')
+    query=('update Categories set CategoryStatus = %s Where CategoryID=%s')
+    data = request.get_json()
     cursor.execute(query, ('Inactive',data['CategoryID']))
     cnx.commit()
     return jsonify({'Result':'1','Message':'Category with id {} was diactivated on category table'.format(data['CategoryID']),'Status':'Sucessful'})
 
+
+#works
 @app.route('/deleteCategory',methods=['DELETE'])
 def delete_category():
-    query = 'delete from Category where CategoryID=%s'
-    data =request.get_json().get('data')
+    query = 'delete from Categories where CategoryID=%s'
+    data =request.get_json()
     cursor.execute(query,(data['CategoryID'],))
     cnx.commit()
     return jsonify({'Result':'1', 'Message':'Category with id {} was deleted from category table'.format(data['CategoryID']),'Status':'Sucessful'})
 
+#works
 @app.route('/getCategories')
 def get_categories():
-    query = 'Select * from Category'
+    query = 'Select * from Categories'
     cursor.execute(query)
-    category = []
+    category = []  
 
     for cat in cursor:
         category.append({'id':cat[0],'Name':cat[1],'Status':cat[2]})
@@ -46,7 +52,7 @@ def get_categories():
 
 @app.route('/getCategory')
 def get_category():
-    query= 'select * from Category where id=%s'
+    query= 'select * from Categories where id=%s'
     category=''
     cursor.execute(query,(request.args.value('id'),))
     for cat in cursor:

@@ -12,11 +12,11 @@ TABLES['Challenges']=("create table Challenges(ChallengeID integer primary key a
 	"Answer varchar(100), Hints longtext,"
 	"Attempts integer, ChallengeStatus varchar(50),"
 	"HintScore integer,TotalScore integer)")
-TABLES['Team']=("create table Team (TeamID integer primary key auto_increment, TeamName varchar(50), TeamPassword varchar(30),TeamStatus varchar(50),"
+TABLES['Team']=("create table Team (TeamID integer primary key auto_increment, TeamName varchar(50), TeamPassword varchar(256),TeamStatus varchar(50),"
 	"CreationDate datetime, CreatedBy varchar(50))")
  
 TABLES['User']=("create table User(UserID integer primary key auto_increment, FirstName varchar(20), LastName varchar(20), "
-"    	StudentID varchar(20), Status varchar(50), CreationDate datetime, UserType varchar(30), SchoolName varchar(100))"    )    
+"    	StudentID varchar(50), Status varchar(50), CreationDate datetime, UserType varchar(30), SchoolName varchar(100))"    )    
 
 TABLES['Members']=("create table Members(MemberID integer primary Key auto_increment, TeamID integer,"
  	"UserID integer, AddedDate datetime,"

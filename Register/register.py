@@ -13,7 +13,7 @@ cursor = cnx.cursor(buffered=True)
 
 
 
-@app.route('/register', methods=['GET', 'POST','PUT'])
+@app.route('/api/register', methods=['GET', 'POST','PUT'])
 @cross_origin()
 def register():
     
@@ -50,7 +50,7 @@ def register():
             query = ("insert into Team (TeamName,TeamPassword,TeamStatus,CreationDate,CreatedBy)"
             "values(%(TeamName)s,%(TeamPassword)s,%(TeamStatus)s,%(CreationDate)s,%(CreatedBy)s)")
             queryData = {'TeamName':data['TeamName'],
-                    'TeamPassword':str(hashlib.sha256(data['TeamPassword']).hexdigest()),
+                    'TeamPassword':str(hashlib.sha256(data['TeamPassword'].encode()).hexdigest()),
                     'TeamStatus': 'Active',
                     'CreationDate': datetime.now(),
                     'CreatedBy':data['StudentID1']

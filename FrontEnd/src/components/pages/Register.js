@@ -72,7 +72,7 @@ export default class Register extends Component {
     // these are all the data that we need to send to the server
     //this works perfectly fine
     componentDidMount(){
-      axios.get('http://localhost:8002/register')
+      axios.get('api/register')
       .then(res =>
         {var result = res.data;
         this.setState({result});
@@ -85,7 +85,7 @@ export default class Register extends Component {
     onSubmitHandler  = (event) =>{
       event.preventDefault();
       console.log("click");
-      axios.post('http://localhost:8002/register', 
+      axios.post('api/register', 
           {
             TeamName: this.state.TeamName,
             Name1: this.state.Name1,
