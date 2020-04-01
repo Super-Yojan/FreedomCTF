@@ -1,0 +1,68 @@
+<link rel="stylesheet" type="text/css" href="challange.css">
+
+<script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js"></script>
+
+<script>
+function openSlideMenu(){
+    document.getElementById('content').style.marginLeft = '250px';
+    document.getElementById('menu').style.width = '250px';
+
+}
+    
+function closeSlideMenu(){
+    document.getElementById('content').style.marginLeft='0';
+    document.getElementById('menu').style.width = '0';
+}
+</script>
+
+<head>
+    <body>
+        
+        <div id="content">
+           
+        <span class="slide">
+            <a herf="#" ondblclick="openSlideMenu()" onclick="closeSlideMenu()">
+                
+                <i class="fas fa-angle-double-left"></i>    
+            </a>
+        </span>
+            
+        <div id="menu" class="inside">
+            
+        <table>
+            <tr>
+                <td class="headC1"> Challange<br>Categories</td>
+            </tr>
+            <tr>
+                <td class="C2" id="all">All <span id="redAll" class="red">0</span></td>
+            </tr>
+            <tr>
+                <td class="C2" id="Crypto">Cryptography <span id="redCrypto" class="red">0</span></td>
+            </tr>
+            <tr>
+                <td class="C2" id="Linux">Linux <span id="redLinux" class="red">0</span></td>
+            </tr>
+            <tr>
+                <td class="C2" id="WebExploi">Web Exploitation <span id="redWeb" class="red">0</span></td>
+            </tr>
+            <tr>
+                <td class="C2" id="ETC">E.T.C. <span id="redetc" class="red">0</span></td>
+            </tr>
+    </table>
+
+    <table class="solved">
+             <tr>
+                <td class="headC1"> Solved</td>
+            </tr>
+
+            <tr>
+                <td class="C2" id="howmanysolves">No solves <span id="redetc" class="red">0</td>
+            </tr>
+    </table>
+        
+        </div>
+            
+        </div>
+        
+    </body>
+</head>

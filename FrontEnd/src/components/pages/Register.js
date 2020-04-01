@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import '../../css/Register.css';
+import '../../website.css';
 import { Redirect } from "react-router-dom";
 import axios from 'axios';
 
 export default class Register extends Component {
-
   constructor(props){
     super(props)
     this.state = {
@@ -122,90 +121,90 @@ export default class Register extends Component {
         return (
 
             <React.Fragment>
-              <h1 class="form">Register</h1>
-            <form onSubmit={this.onSubmitHandler}>
+              <h1 class="entry-header">Register</h1>
+            <form class="entry-form" onSubmit={this.onSubmitHandler}>
 
-              <label>Team Name</label>
+              <label class="entry-form-label">Team Name</label>
               <div>
               <i className="fa fa-user"></i>
-              <input name="TeamName" type="text" placeholder="Team Name" value={this.state.TeamName} onChange={this.handleChange} required/> <br/>
+              <input className="entry-form-input" name="TeamName" type="text" placeholder="Team Name" value={this.state.TeamName} onChange={this.handleChange} required/> <br/>
               </div>
-              <label>Password</label>
+              <label class="entry-form-label">Password</label>
+              <div>
+              <i className="entry-i" class="fa fa-lock"></i>
+              <input className="entry-form-input"  name="password" type="password" placeholder="******" value ={this.state.password} onChange={this.handleChange} required/><br/>
+              </div>
+              <label class="entry-form-label">Confirm Password</label>
               <div>
               <i class="fa fa-lock"></i>
-              <input name="password" type="password" placeholder="******" value ={this.state.password} onChange={this.handleChange} required/><br/>
+              <input className="entry-form-input"  name="confirmPass" type="password" placeholder="******" value={this.state.confirmPass} onChange={this.handleChange} required/><br/>
               </div>
-              <label>Confirm Password</label>
-              <div>
-              <i class="fa fa-lock"></i>
-              <input name="confirmPass" type="password" placeholder="******" value={this.state.confirmPass} onChange={this.handleChange} required/><br/>
-              </div>
-              <label>School Name</label>
+              <label class="entry-form-label">School Name</label>
               <div>
               <i class="fa fa-building"></i>
-              <input name="SchoolName" value={this.state.SchoolName} onChange={this.handleChange} required/>
+              <input className="entry-form-input"  name="SchoolName" value={this.state.SchoolName} onChange={this.handleChange} required/>
               </div>
-              <button type = "button" onClick={this.solo} id="soloButton">Solo</button>
-              <button type = "button" onClick={this.team} id="teamButton">Team</button>
+              <button className="entry-form-button" type = "button" onClick={this.solo} id="soloButton">Solo</button>
+              <button className="entry-form-button" type = "button" onClick={this.team} id="teamButton">Team</button>
 
               <div id="Solo">
-                <label>Full Name</label>
+                <label className="entry-form-label">Full Name</label>
                 <div>
                 <i className="fa fa-user"></i>
-                <input type="text" name="Name1" placeholder="Name" value ={this.state.Name1} onChange = {this.handleChange} required/><br/>
+                <input className="entry-form-input" type="text" name="Name1" placeholder="Name" value ={this.state.Name1} onChange = {this.handleChange} required/><br/>
                 </div>
-                <label>Email</label>
+                <label className="entry-form-label">Email</label>
                 <div>
                 <i className="fa fa-envelope"></i>
-                <input type="email" name="StudentId1" placeholder="StudentID@lcps.org" value = {this.state.email1} onChange={this.handleChange} required/><br/>
+                <input className="entry-form-input"  type="email" name="StudentId1" placeholder="StudentID@lcps.org" value = {this.state.email1} onChange={this.handleChange} required/><br/>
                 </div>
 
               </div>
 
               <div id="Team">
-                <label>Team Member 1</label>
+                <label className="entry-form-label">Team Member 1</label>
                 <div>
                 <i className="fa fa-users"></i>
-                <input type="text" name="Name1" placeholder="Full Name" value={this.state.Name1} onChange ={this.handleChange} required/><br/>
+                <input className="entry-form-input"  type="text" name="Name1" placeholder="Full Name" value={this.state.Name1} onChange ={this.handleChange} required/><br/>
                 </div>
                 <label>Email</label>
                 <div>
                 <i className="fa fa-envelope"></i>
-                <input type="email" name="StudentId1" placeholder="StudentID@lcps.org" value = {this.state.email1} onChange={this.handleChange}  required/><br/>
+                <input className="entry-form-input"  type="email" name="StudentId1" placeholder="StudentID@lcps.org" value = {this.state.email1} onChange={this.handleChange}  required/><br/>
                 </div>
-                <label>Team Member 2</label>
+                <label className="entry-form-label">Team Member 2</label>
                 <div>
                 <i className="fa fa-users"></i>
-                <input type="text" name="Name2" placeholder="Full Name" value={this.state.Name2} onChange ={this.handleChange} required/><br/>
+                <input className="entry-form-input"  type="text" name="Name2" placeholder="Full Name" value={this.state.Name2} onChange ={this.handleChange} required/><br/>
                 </div>
-                <label>Email</label>
+                <label className="entry-form-label">Email</label>
                 <div>
                 <i className="fa fa-envelope"></i>
-                <input type="email" name="StudentId2" placeholder="StudentID@lcps.org" value = {this.state.email2} onChange={this.handleChange}  required/><br/>
+                <input className="entry-form-input"  type="email" name="StudentId2" placeholder="StudentID@lcps.org" value = {this.state.email2} onChange={this.handleChange}  required/><br/>
                 </div>
-                <label>Team Member 3</label>
+                <label className="entry-form-label">Team Member 3</label>
                 <div>
                 <i className="fa fa-users"></i>
-                <input type="text" name="Name3"  placeholder="Full Name" value={this.state.Name3} onChange ={this.handleChange}/><br/>
+                <input className="entry-form-input"  type="text" name="Name3"  placeholder="Full Name" value={this.state.Name3} onChange ={this.handleChange}/><br/>
                 </div>
-                <label>Email</label>
+                <label className="entry-form-label">Email</label>
                 <div>
                 <i className="fa fa-envelope"></i>
-                <input type="email" name="StudentId4" placeholder="StudentID@lcps.org" value = {this.state.email3} onChange={this.handleChange} />  <br/>
+                <input className="entry-form-input"  type="email" name="StudentId4" placeholder="StudentID@lcps.org" value = {this.state.email3} onChange={this.handleChange} />  <br/>
                 </div>
                 <label>Team Member 4</label>
                 <div>
                 <i className="fa fa-users"></i>
-                <input type="text" name="Name4" placeholder="Full Name" value={this.state.Name4} onChange ={this.handleChange}/><br/>
+                <input className="entry-form-input"  type="text" name="Name4" placeholder="Full Name" value={this.state.Name4} onChange ={this.handleChange}/><br/>
                 </div>
-                <label>Email</label>
+                <label className="entry-form-label">Email</label>
                 <div>
                 <i className="fa fa-envelope"></i>
-                <input type="email" name="StudentId4" placeholder="StudentID@lcps.org" value = {this.state.email4} onChange={this.handleChange} />  <br/>
+                <input className="entry-form-input"  type="email" name="StudentId4" placeholder="StudentID@lcps.org" value = {this.state.email4} onChange={this.handleChange} />  <br/>
                 </div>
               
               </div>
-                <input type="submit" name ="SoloRegister" onClick={this.onSubmitHandler} value="Register"/>
+                <input className="entry-form-input" type="submit" name ="SoloRegister" onClick={this.onSubmitHandler} value="Register"/>
 
             </form>
     </React.Fragment>
