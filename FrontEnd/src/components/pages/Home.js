@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import '../../website.css';
 
-export default class Home extends Component {
+class Home extends Component {
     render() {
         return (
             <React.Fragment>
@@ -20,3 +20,5 @@ export default class Home extends Component {
         )
     }
 }
+
+export default Home;

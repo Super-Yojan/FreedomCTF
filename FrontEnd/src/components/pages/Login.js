@@ -47,9 +47,6 @@ class Login extends Component {
     } );
   }
 
-  
-
-
     render() {
         return (
             <React.Fragment>
@@ -79,8 +76,5 @@ class Login extends Component {
         )
 
     }
-  
 }
-
-
 export default withRouter(Login);

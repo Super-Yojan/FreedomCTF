@@ -158,49 +158,55 @@ export default class Register extends Component {
                 <i className="fa fa-envelope"></i>
                 <input className="entry-form-input"  type="email" name="StudentId1" placeholder="StudentID@lcps.org" value = {this.state.email1} onChange={this.handleChange} required/><br/>
                 </div>
-
               </div>
 
               <div id="Team">
                 <label className="entry-form-label">Team Member 1</label>
                 <div>
-                <i className="fa fa-users"></i>
-                <input className="entry-form-input"  type="text" name="Name1" placeholder="Full Name" value={this.state.Name1} onChange ={this.handleChange} required/><br/>
+                  <i className="fa fa-users"></i>
+                  <input className="entry-form-input"  type="text" name="Name1" placeholder="Full Name" value={this.state.Name1} onChange ={this.handleChange} required/><br/>
                 </div>
-                <label>Email</label>
+
+                <label className="entry-form-label">Email</label>
                 <div>
-                <i className="fa fa-envelope"></i>
-                <input className="entry-form-input"  type="email" name="StudentId1" placeholder="StudentID@lcps.org" value = {this.state.email1} onChange={this.handleChange}  required/><br/>
+                  <i className="fa fa-envelope"></i>
+                  <input className="entry-form-input"  type="email" name="StudentId1" placeholder="StudentID@lcps.org" value = {this.state.email1} onChange={this.handleChange}  required/><br/>
                 </div>
+                  
                 <label className="entry-form-label">Team Member 2</label>
                 <div>
-                <i className="fa fa-users"></i>
-                <input className="entry-form-input"  type="text" name="Name2" placeholder="Full Name" value={this.state.Name2} onChange ={this.handleChange} required/><br/>
+                  <i className="fa fa-users"></i>
+                  <input className="entry-form-input"  type="text" name="Name2" placeholder="Full Name" value={this.state.Name2} onChange ={this.handleChange} required/><br/>
                 </div>
+
                 <label className="entry-form-label">Email</label>
                 <div>
-                <i className="fa fa-envelope"></i>
-                <input className="entry-form-input"  type="email" name="StudentId2" placeholder="StudentID@lcps.org" value = {this.state.email2} onChange={this.handleChange}  required/><br/>
+                  <i className="fa fa-envelope"></i>
+                  <input className="entry-form-input"  type="email" name="StudentId2" placeholder="StudentID@lcps.org" value = {this.state.email2} onChange={this.handleChange}  required/><br/>
                 </div>
+
                 <label className="entry-form-label">Team Member 3</label>
                 <div>
-                <i className="fa fa-users"></i>
-                <input className="entry-form-input"  type="text" name="Name3"  placeholder="Full Name" value={this.state.Name3} onChange ={this.handleChange}/><br/>
+                  <i className="fa fa-users"></i>
+                  <input className="entry-form-input"  type="text" name="Name3"  placeholder="Full Name" value={this.state.Name3} onChange ={this.handleChange}/><br/>
                 </div>
+
                 <label className="entry-form-label">Email</label>
                 <div>
-                <i className="fa fa-envelope"></i>
-                <input className="entry-form-input"  type="email" name="StudentId4" placeholder="StudentID@lcps.org" value = {this.state.email3} onChange={this.handleChange} />  <br/>
+                  <i className="fa fa-envelope"></i>
+                  <input className="entry-form-input"  type="email" name="StudentId4" placeholder="StudentID@lcps.org" value = {this.state.email3} onChange={this.handleChange} />  <br/>
                 </div>
-                <label>Team Member 4</label>
+
+                <label className="entry-form-label">Team Member 4</label>
                 <div>
-                <i className="fa fa-users"></i>
-                <input className="entry-form-input"  type="text" name="Name4" placeholder="Full Name" value={this.state.Name4} onChange ={this.handleChange}/><br/>
+                  <i className="fa fa-users"></i>
+                  <input className="entry-form-input"  type="text" name="Name4" placeholder="Full Name" value={this.state.Name4} onChange ={this.handleChange}/><br/>
                 </div>
+
                 <label className="entry-form-label">Email</label>
                 <div>
-                <i className="fa fa-envelope"></i>
-                <input className="entry-form-input"  type="email" name="StudentId4" placeholder="StudentID@lcps.org" value = {this.state.email4} onChange={this.handleChange} />  <br/>
+                  <i className="fa fa-envelope"></i>
+                  <input className="entry-form-input"  type="email" name="StudentId4" placeholder="StudentID@lcps.org" value = {this.state.email4} onChange={this.handleChange} />  <br/>
                 </div>
               
               </div>

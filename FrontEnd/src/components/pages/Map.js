@@ -1,17 +1,39 @@
 import React, { Component } from 'react'
+import ImageMapper from 'react-image-mapper'
+import { withRouter } from 'react-router-dom'
 
-export default class Map extends Component {
+class Map extends Component {
     render() {
+        const map = {
+            name:'my-map',
+            areas: [
+                {
+                    name:'room',
+                    shape:'rect',
+                    coords:[0,0,500,500],
+                    preFillColor:'rgba(255,0,0, 0.5)',
+                    fillColor:'null',
+                    question: "what's your name?",
+                }
 
-    	//we need to have if before rendering this page
-        return (
+            ]
+        }
+
+        return(
             <React.Fragment>
-                <h1 class="form">Challenges</h1>
-
-
+                <center>
+                <ImageMapper src = {require('../images/lower-level.png')} map={map}
+                    onClick = {area => this.askQuestion(area)}
+                />
+                </center>
             </React.Fragment>
         )
     }
+
+    askQuestion = area => {
+        console.log(area.question)
+    }
+
 }
 
-
+export default withRouter(Map);

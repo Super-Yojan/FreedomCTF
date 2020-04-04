@@ -69,6 +69,7 @@ h1{
     text-decoration: none;
     padding:15px;
     color: var(--nav-color);
+    font-weight: 600;
 }
 .navbar-logo{
     font-size:1.5rem;
@@ -119,7 +120,7 @@ h1{
     position: absolute;
     left: 50%;
     transform: translate(-50%);
-    width: 500px;
+    width: 40%;
     padding:40px;
     border-radius: 25px;
   }
@@ -139,15 +140,15 @@ h1{
   }
   
   .entry-form-input[type='submit']{
-    margin-top: 10px;
-    padding: 5px 70px;
+    /*margin-top: 10px;*/
+    /*padding: 5px 70px;*/
     text-align: center;
     border-radius: 12px;
     font-weight: bold;
     background: var(--entry-button-color);
     color:white;
     font-family: sans-serif;
-    font-size: 20px;
+    font-size: 1.1rem;
     width: 50%;
     border:none;
     transform: translate(50%);
@@ -289,7 +290,17 @@ h1{
     color: black;
 }
 
-/*Screen sizes*/
+/*–––––––––––––––––––––––––––––––  Map ––––––––––––––––––––––––––––––– */
+
+.room {
+    text-align: center;
+}
+.room-button {
+    width: 500px;
+    height: 500px;
+}
+
+/*–––––––––––––––––––––––––––––––  Screens ––––––––––––––––––––––––––––––– */
 
 /*small screens*/
 @media only screen and (max-width: 720px){
@@ -297,6 +308,7 @@ h1{
         position: fixed;
         width:100%;
         bottom: 0;
+        z-index: 5;
     }
     .navbar-logo{
         display: none;
@@ -306,7 +318,7 @@ h1{
         align-items: baseline;
         justify-content: space-evenly;
     }
-    .entry .form{
+    .entry-form{
         border:none;
     }
     h1{
@@ -319,9 +331,6 @@ h1{
         width: 18rem;
         height: 14rem;
     }
-    .entry-form-input[type='submit']{
-        transform: translate(120px,-40px);
-      }
 }
 
 /*big screens*/
@@ -352,3 +361,4 @@ h1{
     }
 
 }
+
