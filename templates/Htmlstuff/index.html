@@ -1,0 +1,150 @@
+<html lang="en">
+<header>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/maphilight/1.4.0/jquery.maphilight.min.js"></script>
+    
+    <title>Admin FCTF</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ </header>
+    
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar">
+      <h3 class="baritem heading">Menu</h3>
+      <a href="index.html" class="baritem sidebutton">Manage Question</a>
+      <a href="ManageTeam.html" class="baritem sidebutton">Manage Teams</a>
+      <a href="#" class="baritem sidebutton">Add Alerts</a>
+</div>
+
+<!-- Page Content -->
+    <div class="sidebyside">
+        <div class="flex-container">
+                
+                <h1 style="text-align: center;">Challenges</h1>
+                <span id="create" class="Addnewq">&#43;</span>
+                <div>Linux no 1 (L601)<span class="S-points">100 points</span></div>
+
+                <div>Crypto no 1 (L603)<span class="S-points">200 points</span>
+                </div>
+
+                <div>Web-exploitation (L605)<span class="S-points">100 points</span>
+                </div> 
+                
+                <div>linux (L607)<span class="S-points">100 points</span>
+                </div>         
+        </div> 
+        
+            <div class="flex-container">
+                
+                <h1 style="text-align: center;">Categories</h1>
+                <span id="newCategory" class="Addnewq">&#43;</span>
+
+                <div>Linux<span class="S-points">100 points</span>
+                </div>
+
+                <div>Crypto<span class="S-points">00 00</span>
+                </div>
+
+                <div>Web-exploitation<span class="S-points">00 00</span>
+                </div> 
+                
+                <div>linux<span class="S-points">00 00</span>
+                </div>         
+            </div> 
+    </div>
+    <div id="AddQuest" class="modal">
+
+              <!-- Modal content -->
+                <div class="modal-content">
+                    
+                    <div class="modal-header">
+                        <span class="close">&times;</span>
+                        <label for="Heading"><h3>Heading:</h3></label>
+                        <input id="Heading" for="Heading" type="Text" placeholder="Add a heading...">
+                    </div>
+                    <br>
+                <div class="modal-body">
+                    <div class="pairquestion">
+                        <label for="add-question">Add a question:</label>
+                        <br>
+                        <textarea id="add-question" rows="5" cols="40" maxlength="250" placeholder="write a question here..." required></textarea>
+                    </div>
+                    <br>
+                    <form>
+                        <div class="pairquestion">
+                            <label for="category">Choose a category:</label>
+                            <br>
+                            <select id="category" name="category" required>
+                                <option value="" disabled selected>Choose</option>
+
+                                <option value="Linux">Linux</option>
+
+                                <option value="Crypto">Crypto</option>
+
+                                <option value="WebExplo">WebExplo</option>
+
+                                <option value="ETC">E.T.C.</option>
+                            </select>
+                        </div>
+                        
+                        <div class="pairquestion">
+                            <br>
+                            <label for="Answer">Add a answer:</label>
+                            <br>
+                            <input for="Answer" type="text" placeholder="Check for errors"required>
+                            <br>
+                        </div>
+                        <br>
+                        <div class="pairquestion">
+                            <label for="Answer">Number of Attempts:</label>
+                            <br>
+                        
+                            <div class="lilmessage">                 
+                                <input type="number" max="999" placeholder="0-999" required>
+                                <!-- max does not work in type="number" -->
+                                <span class="lilmessagetext">0 = infinity</span>
+                            </div>
+                        
+                        </div>
+                        <br>
+                        <input id="createcategsub" type="submit">
+                        
+                    </form>
+                </div>
+                    
+                </div>
+        </div>
+    
+    
+    <script>
+    var modal = document.getElementById("AddQuest");
+
+    // Get the button that opens the modal
+    var Addnewq = document.getElementById('create');
+    
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal 
+    Addnewq.onclick = function() {
+      modal.style.display = "block";
+    }
+
+    // When the user clicks on (x) the modal is closed
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+  }
+}
+    
+</script>
+    
+</body>
+</html>
